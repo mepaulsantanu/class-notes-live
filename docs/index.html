@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Class Notes Live | MBA M5</title>
+<meta name="description" content="Live exam notes for five MBA Marketing courses, generated automatically from classroom recordings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6FA; --card:#FFFFFF; --ink:#16161F; --soft:#666A7F; --faint:#9A9DB0; --rule:#E7E7EF; --glass:rgba(255,255,255,.72);
+  --sbm:#E4407A; --retail:#0FA58B; --entre:#EE9A0A; --imc:#3E6CF4; --dsma:#8B5CF6;
+  --ok:#14B87A; --warn:#E0492C;
+  --f:"Geist","Segoe UI",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
+  --r:20px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0D0E16; --card:#161722; --ink:#EEEEF6; --soft:#A2A5BA; --faint:#6E7189; --rule:#262839; --glass:rgba(22,23,34,.72);
+  --sbm:#F2629A; --retail:#2FCFB0; --entre:#F7B23E; --imc:#6E93FF; --dsma:#A987FF; }}
+:root[data-theme="dark"]{
+  --bg:#0D0E16; --card:#161722; --ink:#EEEEF6; --soft:#A2A5BA; --faint:#6E7189; --rule:#262839; --glass:rgba(22,23,34,.72);
+  --sbm:#F2629A; --retail:#2FCFB0; --entre:#F7B23E; --imc:#6E93FF; --dsma:#A987FF; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--f);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(color-mix(in srgb,var(--ink) 9%,transparent) 1px,transparent 1px);background-size:22px 22px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid var(--c,var(--imc));outline-offset:2px;border-radius:8px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---- nav ---- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;padding:12px 0}
+.navin{display:flex;align-items:center;gap:12px;background:var(--glass);backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);border:1px solid var(--rule);border-radius:18px;padding:8px 10px 8px 14px;box-shadow:0 8px 30px rgba(20,20,50,.06)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;cursor:pointer;background:none;border:0;padding:4px}
+.mark{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 200deg,var(--sbm),var(--entre),var(--retail),var(--imc),var(--dsma),var(--sbm));position:relative}
+.mark::after{content:"";position:absolute;inset:7px;border-radius:3px;background:var(--card)}
+.tabs{position:relative;display:flex;gap:2px;flex:1;overflow-x:auto;scrollbar-width:none;padding:2px}
+.tabs::-webkit-scrollbar{display:none}
+.pill{position:absolute;top:2px;bottom:2px;border-radius:12px;background:var(--pc,var(--ink));transition:left .35s cubic-bezier(.3,1.3,.5,1),width .35s cubic-bezier(.3,1.3,.5,1),background .3s;z-index:0}
+.tab{position:relative;z-index:1;border:0;background:none;padding:7px 13px;border-radius:12px;cursor:pointer;font-weight:600;font-size:.9rem;white-space:nowrap;color:var(--soft);display:flex;align-items:center;gap:7px;transition:color .25s}
+.tab .d{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.tab[aria-current="page"]{color:#fff}
+.tab[aria-current="page"] .d{background:#fff}
+.tab .nb{font-size:.7rem;background:var(--c);color:#fff;border-radius:999px;padding:0 6px;line-height:1.5}
+.tab[aria-current="page"] .nb{background:rgba(255,255,255,.3)}
+.iconbtn{border:1px solid var(--rule);background:var(--card);border-radius:12px;height:38px;min-width:38px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;color:var(--soft);font-size:.86rem;white-space:nowrap;transition:border-color .2s,color .2s}
+.iconbtn:hover{border-color:var(--ink);color:var(--ink)}
+.iconbtn svg{width:16px;height:16px}
+kbd{font:500 .72rem var(--mono);border:1px solid var(--rule);border-radius:6px;padding:1px 5px;background:var(--bg)}
+@media (max-width:760px){.iconbtn .lbl{display:none}}
+
+/* ---- common ---- */
+.card{background:var(--card);border:1px solid var(--rule);border-radius:var(--r);position:relative;overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--c,var(--imc)) 13%,transparent),transparent 45%);pointer-events:none;transition:opacity .3s}
+.lift{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,border-color .25s}
+.lift:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(20,20,60,.10);border-color:color-mix(in srgb,var(--c,var(--ink)) 40%,var(--rule))}
+.btn{position:relative;overflow:hidden;border:0;border-radius:12px;padding:10px 18px;font-weight:600;font-size:.92rem;cursor:pointer;background:var(--ink);color:var(--card);display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .2s,opacity .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px color-mix(in srgb,var(--c,var(--ink)) 35%,transparent)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.c{background:var(--c);color:#fff}
+.btn.shine::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-60%}100%{left:130%}}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--rule)}
+.btn.ghost:hover{border-color:var(--ink);box-shadow:none}
+.btn[disabled]{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.btn svg{width:16px;height:16px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;border-radius:999px;padding:3px 10px;background:color-mix(in srgb,var(--c,var(--ink)) 12%,transparent);color:var(--c,var(--ink));white-space:nowrap}
+.tag.warn{--c:var(--warn)}
+.tag.okk{--c:var(--ok)}
+.muted{color:var(--soft)}
+.enter{animation:enter .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes enter{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.live{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--soft)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--faint);flex:none}
+.dot.on{background:var(--ok);box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 70%,transparent);animation:ping 2s infinite}
+.dot.bad{background:var(--warn)}
+@keyframes ping{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.banner{margin:6px 0 14px;padding:12px 16px;border-radius:14px;background:color-mix(in srgb,var(--warn) 10%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+.banner[hidden]{display:none}
+main{padding-bottom:70px;min-height:70vh}
+
+/* ---- home bento ---- */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(150px,auto);gap:14px;margin-top:8px}
+.b-hero{grid-column:span 2;grid-row:span 2;padding:28px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--imc) 14%,var(--card)),var(--card) 55%,color-mix(in srgb,var(--sbm) 12%,var(--card)))}
+.b-hero h1{font-size:clamp(2.1rem,4.6vw,3.5rem);line-height:1;letter-spacing:-.045em;font-weight:800;margin:14px 0 12px;max-width:13ch}
+.b-hero h1 .g{background:linear-gradient(90deg,var(--sbm),var(--entre),var(--retail),var(--imc),var(--dsma),var(--sbm));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:flow 6s linear infinite}
+@keyframes flow{to{background-position:200% center}}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:18px 0}
+.stat .v{font-size:2.3rem;font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stat .k{font-size:.82rem;color:var(--soft);margin-top:4px}
+.b-latest{grid-column:span 2;padding:0;border:0;background:none;overflow:visible}
+.gborder{position:relative;border-radius:var(--r);padding:1.5px;height:100%;background:conic-gradient(from var(--ang,0deg),var(--c),transparent 30%,transparent 70%,var(--c));animation:spin 5s linear infinite}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--ang:360deg}}
+.gborder>div{background:var(--card);border-radius:calc(var(--r) - 1.5px);height:100%;padding:22px;display:flex;flex-direction:column;gap:10px;cursor:pointer}
+.b-latest h3{margin:0;font-size:1.35rem;letter-spacing:-.02em;line-height:1.2}
+.b-rings{grid-column:span 2;padding:20px 22px}
+.rings{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:10px}
+.ring{border:0;background:none;cursor:pointer;text-align:center;padding:6px 2px;border-radius:14px;transition:background .2s}
+.ring:hover{background:color-mix(in srgb,var(--c) 8%,transparent)}
+.ring svg{width:74px;height:74px;display:block;margin:0 auto}
+.ring .arc{transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
+.ring b{display:block;font-size:.85rem;margin-top:6px}
+.ring small{display:block;font-size:.74rem;color:var(--soft)}
+.b-todo{grid-column:span 2;padding:20px 22px}
+.b-feed{grid-column:1/-1;padding:20px 22px}
+.b-feed .rowlist{columns:2;column-gap:28px}.b-feed .rowlist li{break-inside:avoid}
+@media (max-width:700px){.b-feed .rowlist{columns:1}}
+.b-quiz{grid-column:span 2;padding:20px 22px}
+.bh{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bh h2{margin:0;font-size:1.02rem;letter-spacing:-.01em}
+.rowlist{list-style:none;margin:12px 0 0;padding:0}
+.rowlist li{display:flex;align-items:center;gap:12px;padding:9px 0;border-top:1px solid var(--rule)}
+.rowlist li:first-child{border-top:0}
+.rowlist .sw{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
+.rowlist .t{flex:1;min-width:0}
+.rowlist .t b{display:block;font-weight:600;font-size:.93rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rowlist .t small{color:var(--soft);font-size:.8rem}
+.linkbtn{border:0;background:none;padding:0;cursor:pointer;text-align:left;width:100%}
+.mini{padding:6px 12px;font-size:.82rem;border-radius:10px}
+@media (max-width:900px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.b-hero,.b-latest,.b-rings,.b-todo,.b-feed,.b-quiz{grid-column:span 2}.b-hero{grid-row:auto}}
+@media (max-width:520px){.rings{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.b-tt{grid-column:1/-1;padding:20px 22px}
+.ttgrid{display:grid;grid-template-columns:54px repeat(6,minmax(0,1fr));gap:6px;margin-top:14px;font-size:.84rem}
+.tth{text-align:center;font-weight:700;color:var(--soft);padding:4px 0;border-radius:8px}
+.tth.today{background:var(--ink);color:var(--card)}
+.ttt{font:500 .74rem var(--mono);color:var(--faint);align-self:center}
+.ttc{border:0;border-radius:10px;min-height:44px;padding:6px;display:flex;align-items:center;justify-content:center;gap:6px;text-align:center;font-weight:700;font-size:.82rem;line-height:1.2}
+button.ttc{cursor:pointer;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);transition:transform .15s,background .2s}
+button.ttc:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--c) 26%,transparent)}
+.ttc.today{outline:1.5px dashed color-mix(in srgb,var(--ink) 25%,transparent);outline-offset:-1px}
+.ttc.live{background:var(--c);color:#fff;box-shadow:0 0 0 0 color-mix(in srgb,var(--c) 60%,transparent);animation:ping 2s infinite}
+.ttc.live i{font-style:normal;font-size:.68rem;background:rgba(255,255,255,.3);border-radius:999px;padding:0 6px}
+.ttc.other{background:var(--bg);color:var(--faint);font-weight:500;font-size:.74rem}
+.ttc.empty{background:transparent}
+
+@media (max-width:560px){.ttgrid{grid-template-columns:40px repeat(6,minmax(0,1fr));font-size:.72rem;gap:4px}.ttc{min-height:38px;font-size:.7rem;padding:3px}.ttc.other{font-size:.6rem}}
+
+/* ---- polish: nav, back, bottom bar ---- */
+.backbtn[hidden]{display:none}
+.navsp{display:none}
+.crumb .backlink{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--rule);background:var(--card);border-radius:10px;padding:5px 12px 5px 8px;color:var(--ink);font-weight:600;cursor:pointer;transition:border-color .2s,transform .15s}
+.crumb .backlink:hover{border-color:var(--ink);transform:translateX(-2px)}
+.crumb .backlink svg{width:16px;height:16px}
+.crumb .sep{width:1px;height:16px;background:var(--rule);margin:0 4px}
+.bnav{display:none}
+@media (max-width:760px){
+  .navin .tabs{display:none}.navsp{display:block;flex:1}
+  .navin{gap:6px;padding:6px 8px}.navin .iconbtn{min-width:36px;height:36px;padding:0 8px}.brand{gap:8px;padding:2px}
+  .brand span{display:inline}
+  .bnav{display:grid;grid-template-columns:repeat(6,1fr);position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:44;background:var(--glass);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--rule);border-radius:20px;padding:6px;box-shadow:0 10px 30px rgba(20,20,50,.14)}
+  .bnav button{border:0;background:none;border-radius:14px;padding:7px 2px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.68rem;font-weight:700;color:var(--soft);cursor:pointer;transition:background .2s,color .2s}
+  .bnav .bd{width:22px;height:5px;border-radius:3px;background:var(--c);opacity:.35;transition:opacity .2s,width .25s}
+  .bnav button[aria-current="page"]{background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--ink)}
+  .bnav button[aria-current="page"] .bd{opacity:1;width:28px}
+  main{padding-bottom:120px}
+  body .fab{bottom:calc(88px + env(safe-area-inset-bottom,0px));right:14px}
+  body .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .alertbar{flex-wrap:nowrap;padding:10px 12px;gap:10px}
+  .alertbar .txt{min-width:0;cursor:pointer}
+  .alertbar b{font-size:.92rem;display:block}
+  .alertbar #alertGo{display:none}
+  .segtabs{display:flex;width:100%;overflow-x:auto}
+  .segtabs button{flex:1;padding:8px 10px;font-size:.84rem;white-space:nowrap}
+  .b-hero{padding:22px}
+  .paper{padding:20px 16px 26px}
+}
+.segtabs button{white-space:nowrap}
+.bento.anim>*{animation:enter .55s cubic-bezier(.2,.8,.2,1) both}
+.bento.anim>*:nth-child(2){animation-delay:60ms}.bento.anim>*:nth-child(3){animation-delay:120ms}.bento.anim>*:nth-child(4){animation-delay:180ms}.bento.anim>*:nth-child(5){animation-delay:240ms}.bento.anim>*:nth-child(6){animation-delay:300ms}.bento.anim>*:nth-child(7){animation-delay:360ms}.bento.anim>*:nth-child(8){animation-delay:420ms}.bento.anim>*:nth-child(9){animation-delay:480ms}
+
+.sw-auto{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:var(--soft);cursor:pointer}
+.sw-auto input{position:absolute;opacity:0;width:1px;height:1px}
+.sw-auto span{width:34px;height:20px;border-radius:999px;background:var(--rule);position:relative;transition:background .2s}
+.sw-auto span::after{content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+.sw-auto input:checked+span{background:var(--ok)}
+.sw-auto input:checked+span::after{transform:translateX(14px)}
+.sw-auto input:focus-visible+span{outline:2.5px solid var(--imc);outline-offset:2px}
+/* ---- shared (viewer) mode ---- */
+.viewer #wBtn,.viewer #bulkBtn,.viewer [data-write],.viewer .sw-auto,.viewer #annAdd,.viewer #annScan,.viewer [data-edit],.viewer [data-del],.viewer #checkBtn,.viewer select[data-move],.viewer .rawfoot label,.viewer .rec .foot label{display:none!important}
+/* ---- notes: well-defined layout ---- */
+.md{line-height:1.7}
+.paper .md{max-width:70ch;font-size:1.02rem;counter-reset:sec}
+.paper .md>p:first-child{font-size:1.08rem;padding:16px 18px;border-radius:14px;background:color-mix(in srgb,var(--c) 8%,transparent);border:1px solid color-mix(in srgb,var(--c) 20%,transparent)}
+.paper .md h2{display:flex;align-items:center;gap:12px;margin:36px 0 12px;padding-top:22px;border-top:1px solid var(--rule)}
+.paper .md h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font:700 .78rem var(--mono);color:#fff;background:var(--c);border-radius:8px;padding:4px 8px;letter-spacing:0}
+.paper .md h3{font-size:1.1rem;margin:24px 0 8px;padding-left:12px;border-left:3px solid var(--c);color:var(--ink)}
+.md .call{display:grid;grid-template-columns:118px 1fr;gap:12px;align-items:baseline;margin:8px 0;padding:11px 14px;border-radius:12px;background:color-mix(in srgb,var(--cc) 8%,transparent);border-left:3px solid var(--cc)}
+.md .call .cl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--cc)}
+.md .call>div{min-width:0}
+.c-def{--cc:var(--c)}.c-ex{--cc:var(--retail)}.c-biz{--cc:var(--imc)}.c-tip{--cc:var(--entre)}.c-fx{--cc:var(--dsma)}.c-key{--cc:var(--soft)}
+.md .qa{display:flex;gap:12px;align-items:baseline;margin:18px 0 6px;font-weight:700;font-size:1.02rem}
+.md .qa .qn{flex:none;font:700 .74rem var(--mono);color:#fff;background:var(--c);border-radius:8px;padding:3px 8px}
+.md .qa-a{margin:0 0 8px 46px;padding:10px 14px;border-radius:12px;background:var(--bg);border:1px dashed var(--rule);color:var(--soft)}
+.md td:first-child{font-weight:700;color:var(--c)}
+.md li strong:first-child{color:var(--c)}
+.toc{counter-reset:t}
+.toc a::before{counter-increment:t;content:counter(t,decimal-leading-zero);font:500 .72rem var(--mono);color:var(--faint);margin-right:8px}
+@media (max-width:560px){.md .call{grid-template-columns:1fr;gap:4px}.md .qa-a{margin-left:0}}
+
+/* ---- announcements ---- */
+.bell{position:relative}
+.bdg{position:absolute;top:-6px;right:-6px;min-width:19px;height:19px;border-radius:999px;background:var(--ok);color:#fff;font:700 .7rem/19px var(--f);padding:0 5px;text-align:center;box-shadow:0 0 0 2px var(--card)}
+.bdg.hot{animation:ping 1.6s infinite}
+.bdg[hidden]{display:none}
+.alertbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 14px;padding:12px 16px;border-radius:16px;background:color-mix(in srgb,var(--ok) 13%,var(--card));border:1.5px solid color-mix(in srgb,var(--ok) 55%,transparent);animation:enter .5s both}
+.alertbar b{font-size:1.02rem;letter-spacing:-.01em}
+.alertbar .ic{width:34px;height:34px;border-radius:10px;background:var(--ok);color:#fff;display:grid;place-items:center;flex:none;animation:ping 2s infinite}
+.alertbar .ic svg{width:18px;height:18px}
+.alertbar .txt{flex:1;min-width:200px}
+.alertbar .x{border:0;background:none;cursor:pointer;color:var(--soft);font-size:1.2rem}
+.b-ann{grid-column:1/-1;padding:18px 20px;background:linear-gradient(120deg,color-mix(in srgb,var(--ok) 12%,var(--card)),var(--card) 60%)}
+.annrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:12px}
+.amini{border:1.5px solid color-mix(in srgb,var(--ok) 50%,transparent);background:var(--card);border-radius:16px;padding:14px 16px;cursor:pointer;text-align:left;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s}
+.amini:hover{transform:translateY(-3px);box-shadow:0 12px 30px color-mix(in srgb,var(--ok) 25%,transparent)}
+.amini b{font-size:.98rem;font-weight:800;letter-spacing:-.01em;line-height:1.3}
+.amini small{color:var(--soft);font-size:.8rem}
+.chipdue{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--ok);color:#fff;width:fit-content}
+.chipdue.tba{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.chipdue.past{background:var(--rule);color:var(--soft)}
+.chipdue.hot::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1s steps(2) infinite}
+.ahero{padding:26px;margin-top:8px;display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;background:linear-gradient(135deg,color-mix(in srgb,var(--ok) 16%,var(--card)),var(--card) 70%)}
+.ahero h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.02;letter-spacing:-.04em;margin:8px 0 6px}
+.asec{margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+.asec h2{margin:0;font-size:1.15rem;letter-spacing:-.02em}
+.alist{display:flex;flex-direction:column;gap:12px}
+.acard{display:grid;grid-template-columns:6px 1fr;border-radius:18px;overflow:hidden;border:1.5px solid var(--rule);background:var(--card);transition:transform .2s,box-shadow .2s}
+.acard:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(20,20,60,.08)}
+.acard .abar{background:var(--c);height:auto;border-radius:0;margin:0}
+.acard .in{padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.acard .top{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.acard h3{margin:0;font-size:1.22rem;font-weight:800;letter-spacing:-.02em;line-height:1.25}
+.acard p{margin:0;color:var(--soft);font-size:.93rem;max-width:80ch}
+.acard .meta{font-size:.8rem;color:var(--faint)}
+.acard .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.acard.up,.acard.tba{border-color:color-mix(in srgb,var(--ok) 55%,transparent);background:color-mix(in srgb,var(--ok) 7%,var(--card))}
+.acard.up h3{color:color-mix(in srgb,var(--ok) 70%,var(--ink))}
+.acard.past{opacity:.78}
+.acard.past h3{font-weight:600;color:var(--soft)}
+.acard.past .abar{background:var(--rule)}
+.acard.done{border-style:dashed}
+.acard.done h3::after{content:"  Submitted";font-size:.78rem;font-weight:700;color:var(--ok);letter-spacing:0}
+.aform{padding:20px;margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.aform label{display:flex;flex-direction:column;gap:5px;font-size:.85rem;font-weight:600;color:var(--soft)}
+.aform input,.aform select,.aform textarea{border:1px solid var(--rule);background:var(--bg);border-radius:10px;padding:9px 12px;font-size:.95rem;color:var(--ink);font-weight:400;outline:none}
+.aform input:focus,.aform select:focus,.aform textarea:focus{border-color:var(--ok)}
+.aform .full{grid-column:1/-1}
+.aform .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.aform .chk{flex-direction:row;align-items:center;gap:8px}
+@media (max-width:620px){.aform{grid-template-columns:1fr}}
+.prop{border:1.5px dashed color-mix(in srgb,var(--imc) 50%,transparent);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;background:color-mix(in srgb,var(--imc) 5%,var(--card))}
+.prop .t{flex:1;min-width:220px}.prop b{display:block}.prop small{color:var(--soft)}
+
+/* ---- agent ---- */
+.fab{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:45;border:0;border-radius:18px;padding:13px 18px 13px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;color:#fff;font-weight:700;
+  background:linear-gradient(120deg,var(--dsma),var(--imc),var(--sbm));background-size:200% 200%;animation:grad 6s ease infinite;box-shadow:0 14px 34px color-mix(in srgb,var(--imc) 45%,transparent);transition:transform .2s}
+.fab:hover{transform:translateY(-3px) scale(1.02)}
+.fab svg{width:20px;height:20px}
+@keyframes grad{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.agent{position:fixed;right:16px;bottom:16px;top:calc(16px + env(safe-area-inset-top,0px));width:min(470px,calc(100vw - 32px));z-index:46;display:flex;flex-direction:column;border-radius:24px;
+  transform:translateY(20px) scale(.97);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.3,1.3,.5,1),opacity .25s;box-shadow:0 30px 80px rgba(10,10,40,.3)}
+.agent.on{transform:none;opacity:1;pointer-events:auto}
+.ahead{padding:16px 18px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:12px}
+.ahead .av{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 200deg,var(--sbm),var(--entre),var(--retail),var(--imc),var(--dsma),var(--sbm));display:grid;place-items:center;color:#fff;flex:none}
+.ahead .av svg{width:18px;height:18px}
+.ahead b{display:block;letter-spacing:-.01em}.ahead small{color:var(--soft)}
+.ahead .x{margin-left:auto}
+.msgs{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+.msg{max-width:92%;animation:enter .35s cubic-bezier(.2,.8,.2,1) both}
+.msg.u{align-self:flex-end;background:var(--ink);color:var(--card);padding:10px 14px;border-radius:16px 16px 4px 16px;font-size:.94rem;white-space:pre-wrap}
+.msg.a{align-self:flex-start;--c:var(--imc)}
+.msg.a .md{font-size:.94rem;max-width:none}
+.msg.a .md h2{font-size:1.08rem;margin:16px 0 6px}.msg.a .md h3{font-size:1rem}
+.steps{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.steps span{font-size:.8rem;color:var(--soft);display:flex;align-items:center;gap:8px}
+.steps span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.steps span.run::before{background:var(--imc);animation:ping 1.2s infinite}
+.mact{display:flex;gap:8px;margin-top:8px}
+.mact button{border:1px solid var(--rule);background:var(--card);border-radius:8px;padding:3px 10px;font-size:.78rem;cursor:pointer;color:var(--soft)}
+.sugg{display:flex;flex-wrap:wrap;gap:8px}
+.sugg button{border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:8px 12px;font-size:.85rem;cursor:pointer;text-align:left;transition:border-color .2s,transform .15s}
+.sugg button:hover{border-color:var(--imc);transform:translateY(-1px)}
+.hello{padding:4px 0 6px}.hello h3{margin:0 0 6px;font-size:1.3rem;letter-spacing:-.03em}.hello p{margin:0 0 14px;color:var(--soft);font-size:.92rem}
+.ainput{padding:12px;border-top:1px solid var(--rule);display:flex;gap:8px;align-items:flex-end}
+.ainput textarea{flex:1;resize:none;border:1px solid var(--rule);background:var(--bg);border-radius:14px;padding:11px 14px;max-height:140px;min-height:46px;outline:none;font:inherit;font-size:.95rem;line-height:1.4;color:var(--ink)}
+.ainput textarea:focus{border-color:var(--imc)}
+.ainput .btn{height:46px;--c:var(--imc)}
+.thinking{display:inline-flex;gap:4px}.thinking i{width:7px;height:7px;border-radius:50%;background:var(--imc);animation:bounce 1s infinite}
+.thinking i:nth-child(2){animation-delay:.15s}.thinking i:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-5px);opacity:1}}
+@media (max-width:560px){.agent{right:0;left:0;bottom:0;top:env(safe-area-inset-top,0px);width:100%;border-radius:20px 20px 0 0}.fab .lbl{display:none}.fab{padding:14px}}
+
+/* ---- course ---- */
+.chead{padding:26px;margin-top:8px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:end;background:linear-gradient(135deg,color-mix(in srgb,var(--c) 16%,var(--card)),var(--card) 70%)}
+.chead h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.02;letter-spacing:-.04em;margin:8px 0 8px}
+.chead .acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+.cstats{display:flex;gap:22px;flex-wrap:wrap;margin-top:10px}
+.cstats div{font-size:.85rem;color:var(--soft)}.cstats b{display:block;font-size:1.5rem;color:var(--ink);letter-spacing:-.03em}
+.bar{height:6px;border-radius:3px;background:var(--rule);overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;background:var(--c);border-radius:3px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+@media (max-width:720px){.chead{grid-template-columns:1fr}.chead .acts{justify-content:flex-start}}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0 14px}
+.search{position:relative;flex:1;min-width:200px;max-width:360px}
+.search input{width:100%;border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:10px 14px 10px 38px;outline:none;transition:border-color .2s,box-shadow .2s}
+.search input:focus{border-color:var(--c);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 15%,transparent)}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--faint)}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:12px;padding:3px;background:var(--card)}
+.seg button{border:0;background:none;padding:6px 12px;border-radius:9px;font-size:.84rem;font-weight:600;color:var(--soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--c);color:#fff}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.dcard{padding:20px;cursor:pointer;display:flex;flex-direction:column;gap:10px;text-align:left;border:1px solid var(--rule);background:var(--card);border-radius:var(--r);width:100%}
+.dcard .dt{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.dcard .num{font-size:2.4rem;font-weight:800;letter-spacing:-.05em;line-height:.9;color:var(--c)}
+.dcard .mo{font-size:.82rem;color:var(--soft);font-weight:600}
+.dcard h3{margin:0;font-size:1.02rem;letter-spacing:-.01em}
+.dcard p{margin:0;font-size:.88rem;color:var(--soft);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.dcard .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:6px}
+.dcard .foot small{color:var(--faint);font-size:.8rem}
+.dcard.new{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 60%,transparent)}
+.empty{padding:40px 24px;text-align:center;color:var(--soft)}
+.empty b{display:block;color:var(--ink);font-size:1.1rem;margin-bottom:6px}
+
+/* ---- day ---- */
+.crumb{display:flex;gap:8px;align-items:center;font-size:.88rem;color:var(--soft);margin:10px 0 6px;flex-wrap:wrap}
+.crumb button{border:0;background:none;color:var(--soft);cursor:pointer;padding:0;font-weight:600}
+.crumb button:hover{color:var(--ink)}
+.dhead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.dhead h1{font-size:clamp(1.7rem,3.8vw,2.6rem);letter-spacing:-.04em;line-height:1.05;margin:4px 0 6px}
+.segtabs{position:relative;display:inline-flex;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:4px;margin:18px 0 18px}
+.segtabs .ind{position:absolute;top:4px;bottom:4px;border-radius:10px;background:var(--c);transition:left .3s cubic-bezier(.3,1.3,.5,1),width .3s cubic-bezier(.3,1.3,.5,1)}
+.segtabs button{position:relative;z-index:1;border:0;background:none;padding:8px 16px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;color:var(--soft);transition:color .25s}
+.segtabs button[aria-selected="true"]{color:#fff}
+.notewrap{display:grid;grid-template-columns:220px 1fr;gap:26px;align-items:start}
+.toc{position:sticky;top:96px;font-size:.86rem;border-left:2px solid var(--rule);padding-left:14px;max-height:70vh;overflow:auto}
+.toc a{display:block;color:var(--soft);text-decoration:none;padding:4px 0;line-height:1.35;border-left:2px solid transparent;margin-left:-16px;padding-left:14px;transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--c);border-left-color:var(--c)}
+.toc b{display:block;color:var(--ink);font-size:.8rem;margin-bottom:6px}
+@media (max-width:860px){.notewrap{grid-template-columns:1fr}.toc{display:none}}
+.paper{padding:28px clamp(18px,4vw,40px) 34px}
+.md{max-width:72ch;font-size:1rem}
+.md h2{font-size:1.4rem;letter-spacing:-.025em;margin:30px 0 8px;padding-top:6px;scroll-margin-top:100px}
+.md h2:first-child{margin-top:0}
+.md h3{font-size:1.1rem;letter-spacing:-.01em;margin:22px 0 6px;color:var(--c);scroll-margin-top:100px}
+.md h4{font-size:1rem;margin:16px 0 4px}
+.md p,.md ul,.md ol{margin:8px 0}
+.md ul,.md ol{padding-left:22px}
+.md li{margin:5px 0}
+.md li::marker{color:var(--c)}
+.md strong{font-weight:700}
+.md .tw{overflow-x:auto;margin:14px 0;border:1px solid var(--rule);border-radius:12px}
+.md table{border-collapse:collapse;font-size:.92rem;width:100%}
+.md th,.md td{border-bottom:1px solid var(--rule);padding:9px 12px;text-align:left;vertical-align:top}
+.md tr:last-child td{border-bottom:0}
+.md th{font-weight:700;background:color-mix(in srgb,var(--c) 9%,transparent)}
+.md blockquote{margin:14px 0;padding:10px 16px;border-left:4px solid var(--c);background:color-mix(in srgb,var(--c) 7%,transparent);border-radius:0 10px 10px 0}
+.caret{display:inline-block;width:9px;height:1.1em;background:var(--c);vertical-align:text-bottom;margin-left:2px;border-radius:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.gen{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:color-mix(in srgb,var(--c) 8%,transparent);margin-bottom:18px}
+.orb{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--c),transparent 70%);animation:rot .9s linear infinite;-webkit-mask:radial-gradient(circle,transparent 9px,#000 10px);mask:radial-gradient(circle,transparent 9px,#000 10px);flex:none}
+@keyframes rot{to{transform:rotate(360deg)}}
+.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:18px 0 22px}
+.intro div{padding:14px;border-radius:14px;background:var(--bg);font-size:.88rem;color:var(--soft)}
+.intro b{display:block;color:var(--ink);margin-bottom:2px}
+.progress{position:fixed;left:0;top:0;height:3px;background:var(--c);z-index:40;width:0;transition:width .1s}
+
+/* flashcards */
+.fcwrap{display:flex;flex-direction:column;align-items:center;gap:16px;padding:10px 0 10px}
+.fc{width:min(640px,100%);height:340px;perspective:1400px;cursor:pointer;border:0;background:none;padding:0}
+.fc .in{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.3,1.2,.4,1)}
+.fc.flip .in{transform:rotateY(180deg)}
+.fc .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;padding:30px;display:flex;flex-direction:column;justify-content:center;gap:12px;text-align:left;border:1px solid var(--rule);background:var(--card);overflow:auto}
+.fc .front{background:linear-gradient(145deg,color-mix(in srgb,var(--c) 14%,var(--card)),var(--card))}
+.fc .back{transform:rotateY(180deg)}
+.fc .lab{font-size:.78rem;font-weight:700;color:var(--c)}
+.fc .q{font-size:clamp(1.15rem,2.6vw,1.45rem);font-weight:700;letter-spacing:-.02em;line-height:1.3}
+.fc .a{font-size:1rem;line-height:1.6}
+.fcnav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+.dotsrow{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+.dotsrow i{width:8px;height:8px;border-radius:50%;background:var(--rule);transition:background .3s,transform .3s}
+.dotsrow i.cur{background:var(--c);transform:scale(1.4)}
+.dotsrow i.k{background:var(--ok)}.dotsrow i.r{background:var(--warn)}
+
+/* recordings */
+.rec{margin-bottom:10px;padding:0}
+.rec>button{width:100%;display:flex;align-items:center;gap:12px;padding:14px 18px;border:0;background:none;cursor:pointer;text-align:left}
+.rec .tm{font:500 .8rem var(--mono);color:var(--soft);flex:none}
+.rec .tt{flex:1;font-weight:600}
+.rec .chev{transition:transform .3s;color:var(--faint)}
+.rec.open .chev{transform:rotate(180deg)}
+.rec .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.rec.open .body{grid-template-rows:1fr}
+.rec .body>div{overflow:hidden}
+.rec .inner{padding:0 18px 16px 18px;border-top:1px dashed var(--rule)}
+.rec .md h2{display:none}
+.rec .foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:.85rem;color:var(--soft);margin-top:12px}
+.rec select{border:1px solid var(--rule);background:var(--bg);border-radius:9px;padding:5px 8px;font-size:.85rem}
+
+/* palette */
+.scrim{position:fixed;inset:0;background:rgba(10,10,30,.4);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
+.scrim.on{opacity:1;pointer-events:auto}
+.pal{position:fixed;left:50%;top:14vh;transform:translate(-50%,-10px) scale(.98);width:min(620px,94vw);z-index:51;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 30px 80px rgba(10,10,40,.3)}
+.pal.on{opacity:1;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+.pal input{width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:18px 20px;font-size:1.05rem;outline:none}
+.pal ul{list-style:none;margin:0;padding:8px;max-height:52vh;overflow:auto}
+.pal li button{width:100%;display:flex;align-items:center;gap:12px;border:0;background:none;padding:10px 12px;border-radius:12px;cursor:pointer;text-align:left}
+.pal li button[aria-selected="true"]{background:color-mix(in srgb,var(--c) 12%,transparent)}
+.pal .sw{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
+.pal .t{flex:1;min-width:0}.pal .t b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pal .t small{color:var(--soft)}
+.pal .hint{padding:10px 18px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--soft);display:flex;gap:14px;flex-wrap:wrap}
+
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,24px);background:var(--ink);color:var(--card);padding:11px 18px;border-radius:14px;font-size:.92rem;box-shadow:0 12px 34px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .3s,transform .35s cubic-bezier(.3,1.3,.5,1);z-index:60;display:flex;gap:10px;align-items:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.foot-note{color:var(--faint);font-size:.82rem;margin-top:30px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+.fab{display:none!important}
+</style>
+</head>
+<body>
+<div class="progress" id="readbar"></div>
+<header class="nav"><div class="wrap"><div class="navin">
+  <button class="iconbtn backbtn" id="backBtn" type="button" aria-label="Go back" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg><span class="lbl">Back</span></button>
+  <button class="brand" id="homeBtn" type="button" aria-label="Home"><span class="mark"></span><span>Class notes</span></button>
+  <nav class="tabs" id="tabs" aria-label="Courses"><span class="pill" id="pill"></span><span id="tabbtns" style="display:contents"></span></nav>
+  <span class="navsp"></span>
+  <button class="iconbtn bell" id="annBtn" type="button" aria-label="Announcements"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg><span class="lbl">Announcements</span><span class="bdg" id="annBadge" hidden></span></button>
+  <button class="iconbtn" id="palBtn" type="button" aria-label="Search everything"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="lbl">Search</span><kbd class="lbl">Ctrl K</kbd></button>
+  <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch light or dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+</div></div></header>
+<nav class="bnav" id="bnav" aria-label="Courses"></nav>
+
+<main class="wrap">
+  <div id="annAlert"></div>
+  <div class="banner" id="banner" hidden></div>
+  <div id="app"></div>
+  <p class="foot-note">Only lectures from the five M5 courses appear here; raw recordings stay private. Recordings from 7 to 26 September were checked one by one against your M5 timetable. Newer ones go live only if they were recorded in that course's timetable slot and contain no social talk. Off-topic lines inside notes are removed before display.</p>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<div class="pal card" id="pal" role="dialog" aria-modal="true" aria-label="Search">
+  <input id="palIn" type="text" placeholder="Search classes, topics, notes" autocomplete="off" aria-label="Search">
+  <ul id="palList" role="listbox"></ul>
+  <div class="hint"><span><kbd>↑</kbd> <kbd>↓</kbd> to move</span><span><kbd>Enter</kbd> to open</span><span><kbd>Esc</kbd> to close</span></div>
+</div>
+<button class="fab" id="fab" type="button" aria-label="Open the notes assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span class="lbl">Ask your notes</span></button>
+<section class="agent card" id="agent" role="dialog" aria-label="Notes assistant">
+  <div class="ahead"><span class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg></span>
+    <div><b>Notes assistant</b><small id="agentSub">Reads your five courses and does what you ask</small></div>
+    <button class="iconbtn" id="agentClear" type="button" title="Start a new chat" style="margin-left:auto">New chat</button>
+    <button class="iconbtn" id="agentClose" type="button" aria-label="Close">&times;</button></div>
+  <div class="msgs" id="msgs"></div>
+  <form class="ainput" id="agentForm"><textarea id="agentIn" rows="1" placeholder="Ask anything about your classes" aria-label="Message"></textarea><button class="btn c" id="agentSend" type="submit">Send</button></form>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* Static-site data layer: serves data.json (built by sync/build.js) through the same
+   interface the page already uses, and re-checks for new notes every 2 minutes. */
+(function(){
+  let data={examnotes:{},announcements:{},config:{}};const subs=[];
+  const snapCol=c=>({docs:Object.entries(data[c]||{}).map(([id,v])=>({id,exists:true,data:()=>v}))});
+  const snapDoc=p=>{const [c,id]=p.split("/");const v=c==="config"?(data.config||{})[id]:(data[c]||{})[id];return {id,exists:!!v,data:()=>v};};
+  const fire=()=>subs.forEach(s=>{try{s.cb(s.col?snapCol(s.col):snapDoc(s.path));}catch(e){}});
+  let last="";
+  async function load(){
+    try{const r=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw 0;const t=await r.text();
+      if(t!==last){const first=!last;last=t;data=JSON.parse(t);window.__dataUpdated=data.generatedAt;fire();if(!first&&window.__onNewData)window.__onNewData();}
+      window.__lastCheck=Date.now();if(window.__onCheck)window.__onCheck();
+    }catch(e){if(window.__onCheckFail)window.__onCheckFail();}
+  }
+  const ready=load();setInterval(load,120000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)load();});
+  const db={
+    doc:p=>({onSnapshot:cb=>{const s={path:p,cb};subs.push(s);ready.then(()=>cb(snapDoc(p)));return()=>{};},get:async()=>{await ready;return snapDoc(p);}}),
+    collection:c=>({onSnapshot:cb=>{const s={col:c,cb};subs.push(s);ready.then(()=>cb(snapCol(c)));return()=>{};},get:async()=>{await ready;return snapCol(c);}})
+  };
+  window.claude={use:async n=>n==="db"?db:n==="user"?{isOwner:async()=>false}:null};
+})();
+</script>
+<script>
+(() => {
+const SERVER="NeoSapien", START_DATE="2026-09-07", POLL_MS=120000, MAX_PROMPT=60000;
+const COURSES=[
+ {id:"sbm",name:"Strategic Brand Management",short:"SBM",color:"var(--sbm)",words:["brand","branding","mascot","tagline","logo","brand equity","brand identity","brand personality","mind map","neuromarketing","pioneer","keller","aaker","rebrand","barkat","barkathunissa","brand essence","brand elements"]},
+ {id:"retail",name:"Retail Management",short:"Retail",color:"var(--retail)",words:["retail","kirana","ebo","hypermarket","supermarket","mall","inventory","distribution","breaking bulk","merchandis","planogram","footfall","assortment","wholesale","store format","manish","rtm"]},
+ {id:"entre",name:"Entrepreneurship and Intrapreneurship",short:"E&I",color:"var(--entre)",words:["entrepreneur","intrapreneur","startup","start-up","founder","venture","funding","go-to-market","global entrepreneurship","self-employ","vandita"]},
+ {id:"imc",name:"Integrated Marketing Communication",short:"IMC",color:"var(--imc)",words:["imc","integrated marketing","communication theory","advertis","lateral thinking","sachin sinha","johari","consumer behavior","consumer behaviour","encoding","decoding","copywriter","roadblock","standard of living","persuas","communication barrier"]},
+ {id:"dsma",name:"Digital and Social Media Analytics",short:"DSMA",color:"var(--dsma)",words:["analytics","kpi","dashboard","ga4","google analytics","conversion rate","power bi","visualization","visualisation","funnel","predictive","prescriptive","customer journey","cart abandonment","data analysis","bindhia","d&sma"]}
+];
+const TEACH={sbm:"Prof Barkathunissa",retail:"Prof Manish Kumar Srivastava",entre:"Prof Vandita Dar",imc:"Prof Sachin Sinha",dsma:"Prof Bindhia Joji"};
+const BYID=Object.fromEntries(COURSES.map(c=>[c.id,c]));
+const COURSE_IDS=COURSES.map(c=>c.id);
+const CLASS_DOMAINS=["Education","Teaching & Training","Marketing","Data & Analytics","Entrepreneurship","Business Strategy","Operations","Product Management"];
+const SKIP_DOMAINS=["Casual / Social","Family","Household","Health & Wellness","Travel","Personal Finance","Hobbies","Journaling","Real Estate","Parenting","Reminders","Recruitment","Career","Networking","Self Note","Admin","Event Management","Client Relations","Sales","Team Management","Content Creation","Partnerships"];
+const RED_FLAG=/banter|gossip|casual|snack|food|lunch|dinner|party|birthday|family|girlfriend|boyfriend|relationship|roommate|travel|trip|dispute|charger|photo|parking|meal|drink|joke|personal|venting|placement|recruit|\bfest\b|competition|client|invoice|agency|kelora|ping me|sponsor|shopping|cricket|movie|gaming|gym|hostel|pg\b/i;
+const OFF_HEAD=/misc|personal|casual|social|banter|gossip|food|snack|lunch|attendance|roll call|technical|logistic|pre-class|administrat|side conversation|gaming|identity inquir|campus|travel|party|photo|payment|fabricat|faculty and peer|faculty discussion|peer mention|course observation|other discussion|institutional|cultural notes|pg student|account issues|interpersonal|family/i;
+const OFF_LINE=/gossip|banter|\bjok(e|ed|es|ing)\b|teas(e|ing)|snack|\bfood\b|lunch|\btea\b|parcel|\bgym\b|party|drinks|girlfriend|boyfriend|makeup|eyebrow|hungry|wi-?fi|internet|hotspot|charger|phone number|fake attendance|attendance notes|dhoti|magazine claim|profanit|slapp|sleep|personal trainer|resale value|cricket|instagram page|marwari|stereotyp|kajal|laughter|chaotic|playful/i;
+
+const S={items:new Map(),allow:null,allowReady:false,overrides:{},notes:new Map(),exam:{},route:{v:"home"},q:"",seenBefore:"",first:false,gen:null,bulk:null,fc:{key:null,i:0,flip:false,marks:{}},openRec:null,dayTab:"notes"};
+try{S.seenBefore=localStorage.getItem("lcn.seenUpTo")||"";const t=localStorage.getItem("lcn.theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}
+let mcp=null,db=null,sample=null,downloads=null;
+
+/* helpers */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const SETH=(el,v)=>{if(!el||el._h===v)return false;el._h=v;el.innerHTML=v;return true;};
+const APP={set innerHTML(v){SETH($("#app"),v);}};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const IST={timeZone:"Asia/Kolkata"};
+const fmtT=iso=>new Date(iso).toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",hour12:false,...IST});
+const dayKey=iso=>new Date(new Date(iso).getTime()+330*60000).toISOString().slice(0,10);
+const D=k=>new Date(k+"T12:00:00+05:30");
+const fDay=k=>D(k).toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",...IST});
+const fShort=k=>D(k).toLocaleDateString("en-IN",{day:"numeric",month:"short",...IST});
+const fWd=k=>D(k).toLocaleDateString("en-IN",{weekday:"long",...IST});
+const fNum=k=>D(k).toLocaleDateString("en-IN",{day:"numeric",...IST});
+const fMo=k=>D(k).toLocaleDateString("en-IN",{month:"short",...IST});
+const ekey=(c,d)=>`${c}_${d}`;
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),4000);}
+function status(kind,text){S.status={kind,text};const el=$("#liveEl");if(el)el.innerHTML=liveHtml();}
+function liveHtml(){const s=S.status||{kind:"",text:"Connecting to NeoSapien"};return `<span class="dot ${s.kind==="live"?"on":s.kind==="bad"?"bad":""}"></span><span>${esc(s.text)}</span>`;}
+function banner(h){const b=$("#banner");if(!h){b.hidden=true;return;}b.innerHTML=h;b.hidden=false;}
+const TV={};function tick(el,to){if(!el)return;const from=TV[el.id]??0;TV[el.id]=to;if(RM||from===to){el.textContent=to;return;}const t0=performance.now();const st=t=>{const k=Math.min(1,(t-t0)/900),e=1-Math.pow(1-k,3);el.textContent=Math.round(from+(to-from)*e);if(k<1)requestAnimationFrame(st);};requestAnimationFrame(st);}
+document.addEventListener("pointermove",e=>{const c=e.target.closest&&e.target.closest(".spot");if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px");});
+
+/* markdown */
+function slug(s){return "h-"+s.toLowerCase().replace(/<[^>]+>/g,"").replace(/[^a-z0-9]+/g,"-").slice(0,50);}
+function md(src){
+  const L=esc(src).split("\n");const out=[];let list=null,tab=null;
+  const inl=s=>s.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/(^|[\s(])\*(?!\s)([^*]+?)\*(?=[\s).,;:!?]|$)/g,"$1<em>$2</em>");
+  const cl=()=>{if(list){out.push(`</${list}>`);list=null;}};
+  const ct=()=>{if(tab){out.push('<div class="tw"><table>'+tab.map((r,i)=>"<tr>"+r.map(c=>i?`<td>${inl(c)}</td>`:`<th>${inl(c)}</th>`).join("")+"</tr>").join("")+"</table></div>");tab=null;}};
+  for(const raw of L){const l=raw.replace(/\s+$/,"");let m;
+    if(/^\s*\|.*\|\s*$/.test(l)){cl();if(/^\s*\|[\s:|-]+\|\s*$/.test(l))continue;(tab=tab||[]).push(l.trim().slice(1,-1).split("|").map(s=>s.trim()));continue;}
+    ct();
+    if(!l.trim()){cl();continue;}
+    if((m=l.match(/^(#{1,4})\s+(.*)/))){cl();const lv=Math.min(4,m[1].length+ (m[1].length===1?1:0));out.push(`<h${lv} id="${slug(m[2])}">${inl(m[2])}</h${lv}>`);continue;}
+    if((m=l.match(/^&gt;\s?(.*)/))){cl();out.push(`<blockquote>${inl(m[1])}</blockquote>`);continue;}
+    if((m=l.match(/^\s*[-*•]\s+(.*)/))){if(list!=="ul"){cl();out.push("<ul>");list="ul";}out.push(`<li>${inl(m[1])}</li>`);continue;}
+    if((m=l.match(/^\s*\d+[.)]\s+(.*)/))){if(list!=="ol"){cl();out.push("<ol>");list="ol";}out.push(`<li>${inl(m[1])}</li>`);continue;}
+    if((m=l.match(/^(?:\s*[-*•]\s+)?\*\*\s*(Definition|Meaning|Example|Class example|Business example|Real-world example|Industry example|Remember|Exam tip|Formula|Key idea|Note|Watch out)\s*:?\s*\*\*\s*:?\s*(.*)$/i))){cl();const t=m[1].toLowerCase();const k=/def|meaning/.test(t)?"def":/business|real-world|industry/.test(t)?"biz":/example/.test(t)?"ex":/formula/.test(t)?"fx":/tip|watch/.test(t)?"tip":"key";out.push(`<div class="call c-${k}"><span class="cl">${m[1]}</span><div>${inl(m[2])}</div></div>`);continue;}
+    if((m=l.match(/^(?:\d+[.)]\s*)?\*\*\s*(Q\s*\d+)\s*[.:)]?\s*\*\*\s*[.:]?\s*(.*)$/i))){cl();out.push(`<div class="qa"><span class="qn">${m[1].replace(/\s+/g,"")}</span><div>${inl(m[2])}</div></div>`);continue;}
+    if((m=l.match(/^[-*]?\s*\*\*\s*(?:A|Answer|Model answer)\s*[.:]?\s*\*\*\s*[.:]?\s*(.*)$/i))){cl();out.push(`<div class="qa-a">${inl(m[1])}</div>`);continue;}
+    cl();out.push(`<p>${inl(l)}</p>`);}
+  cl();ct();return out.join("");
+}
+/* strip off-topic material from NeoSapien minutes */
+function clean(mom){
+  const lines=String(mom||"").split("\n");const out=[];let drop=false;
+  for(const l of lines){
+    const h=l.match(/^#{2,4}\s+(.*)/)||l.match(/^\*\*([^*]{3,60})\*\*\s*$/);
+    if(h){drop=OFF_HEAD.test(h[1]);if(!drop)out.push(l);continue;}
+    if(drop)continue;
+    if(OFF_LINE.test(l))continue;
+    out.push(l);
+  }
+  return out.join("\n").replace(/\n{3,}/g,"\n\n").replace(/###\s+Action Items\s*\n+(?=(#|$))/g,"").trim();
+}
+
+/* strict filter */
+function strictAuto(m){
+  const doms=m.domains||[];
+  if(doms.some(d=>SKIP_DOMAINS.includes(d)))return null;
+  if(!doms.some(d=>CLASS_DOMAINS.includes(d)))return null;
+  const t=new Date(m.started_at);const ist=new Date(t.getTime()+330*60000);
+  const wd=ist.getUTCDay(),hr=ist.getUTCHours()+ist.getUTCMinutes()/60;
+  if(wd===0||hr<8||hr>16.75)return null;
+  const dur=(new Date(m.finished_at||m.started_at)-t)/1000; if(dur<45)return null;
+  const text=[m.title,m.summary,(m.topics||[]).join(" ")].join(" ");
+  if(RED_FLAG.test(text))return null;
+  const low=(text+" "+(m.mentioned_entities||[]).join(" ")).toLowerCase();
+  const sc=COURSES.map(c=>({id:c.id,s:c.words.reduce((a,w)=>a+(low.includes(w)?1:0),0)})).sort((a,b)=>b.s-a.s);
+  if(sc[0].s>=2&&sc[0].s>=sc[1].s+1)return sc[0].id;
+  return null;
+}
+const SOFT_SKIP=["Casual / Social","Family","Household","Health & Wellness","Travel","Personal Finance","Hobbies","Journaling","Real Estate","Parenting"];
+const hm=s=>{const [h,m]=s.split(":").map(Number);return h*60+m;};
+function slotAt(iso){const tt=S.tt;if(!tt)return undefined;const t=new Date(new Date(iso).getTime()+330*60000);const k=t.toISOString().slice(0,10);
+  if(k<tt.validFrom||k>tt.validTo)return null;const wd=t.getUTCDay(),mins=t.getUTCHours()*60+t.getUTCMinutes();
+  return tt.slots.find(x=>x.day===wd&&mins>=hm(x.start)-(tt.marginBeforeMin||10)&&mins<=hm(x.end)+(tt.marginAfterMin||15))||null;}
+function timetableAuto(m){
+  const sl=slotAt(m.started_at);if(sl===undefined)return strictAuto(m);
+  if(!sl||!sl.course)return null;
+  const doms=m.domains||[];if(doms.some(d=>SOFT_SKIP.includes(d)))return null;
+  if(RED_FLAG.test([m.title,m.summary,(m.topics||[]).join(" ")].join(" ")))return null;
+  const dur=(new Date(m.finished_at||m.started_at)-new Date(m.started_at))/1000;if(dur<30)return null;
+  return sl.course;
+}
+function courseOf(m){
+  const o=S.overrides[m._id];
+  if(o) return COURSE_IDS.includes(o)?o:null;
+  if(db){
+    if(!S.allowReady) return null;
+    if(S.allow&&m.started_at<S.allow.cutoff) return S.allow.courses[m._id]||null;
+  }
+  return timetableAuto(m);
+}
+const fresh=m=>S.seenBefore&&m.started_at>S.seenBefore;
+function model(){
+  const g={};COURSES.forEach(c=>g[c.id]=new Map());
+  for(const m of S.items.values()){const c=courseOf(m);if(!c)continue;const k=dayKey(m.started_at);if(!g[c].has(k))g[c].set(k,[]);g[c].get(k).push(m);}
+  for(const [key,e] of Object.entries(S.exam)){const [c,k]=key.split("_");if(!g[c]||!k||g[c].has(k))continue;
+    const wd=D(k).getUTCDay(),sl=(S.tt&&S.tt.slots||[]).filter(x=>x.course===c&&x.day===wd);
+    const st=sl[0]?sl[0].start:"09:00",en=sl.length?sl[sl.length-1].end:"10:30";
+    const first=(e.markdown||"").trim().split("\n").find(l=>l.trim()&&!l.startsWith("#"))||"";
+    g[c].set(k,[{_id:"syn-"+key,_syn:true,title:"Class notes",summary:first.replace(/\*\*/g,"").slice(0,240),started_at:`${k}T${st}:00+05:30`,finished_at:`${k}T${en}:00+05:30`,domains:[]}]);}
+  for(const c in g){for(const v of g[c].values())v.sort((a,b)=>a.started_at.localeCompare(b.started_at));g[c]=new Map([...g[c].entries()].sort((a,b)=>b[0].localeCompare(a[0])));}
+  return g;
+}
+const isStale=(c,k,recs)=>{const e=S.exam[ekey(c,k)];if(!e)return false;recs=recs.filter(m=>!m._syn);if(!recs.length)return false;if(e.coveredUntil){const cu=new Date(e.coveredUntil).getTime();return recs.some(m=>new Date(m.started_at).getTime()>cu);}return recs.some(m=>!(e.recordingIds||[]).includes(m._id));};
+
+/* routing */
+S.hist=[];S.curHash=null;S.backing=false;
+function go(hash){ if(location.hash===hash) route(); else location.hash=hash; }
+function parentHash(){const r=S.route;if(r.v==="day")return `#/c/${r.c}`;return "#/";}
+function back(){if(S.route.v==="home"&&!S.hist.length)return;const h=S.hist.pop();S.backing=true;if(h&&h!==location.hash)location.hash=h;else{S.backing=false;go(parentHash());}}
+function parse(){const h=location.hash.replace(/^#\/?/,"").split("/");if(h[0]==="announcements")return {v:"ann"};if(h[0]==="c"&&BYID[h[1]])return h[2]?{v:"day",c:h[1],d:h[2]}:{v:"course",c:h[1]};return {v:"home"};}
+addEventListener("hashchange",route);
+function route(){const cur=location.hash||"#/";if(S.curHash!==null&&S.curHash!==cur&&!S.backing){S.hist.push(S.curHash);if(S.hist.length>40)S.hist.shift();}S.backing=false;S.curHash=cur;const prev=S.route;S.route=parse();if(prev.v!==S.route.v||prev.c!==S.route.c||prev.d!==S.route.d){S.q="";S.openRec=null;if(S.route.v==="day"&&!(prev.v==="day"&&prev.d===S.route.d))S.dayTab="notes";scrollTo({top:0,behavior:RM?"auto":"smooth"});}render(true);}
+
+/* nav */
+function renderNav(g){
+  const cur=S.route.v==="ann"?"none":(S.route.c||"home");
+  const items=[{id:"home",short:"Home",color:"var(--ink)"},...COURSES];
+  const tabs=$("#tabs");
+  SETH($("#tabbtns"),items.map(c=>{
+    const n=c.id==="home"?0:[...g[c.id].values()].flat().filter(fresh).length;
+    return `<button class="tab" type="button" data-go="${c.id}" style="--c:${c.color}" ${cur===c.id?'aria-current="page"':""}>${c.id!=="home"?'<span class="d"></span>':""}${esc(c.short)}${n?`<span class="nb">${n}</span>`:""}</button>`;}).join(""));
+  SETH($("#bnav"),items.map(c=>`<button type="button" data-go="${c.id}" style="--c:${c.color}" ${cur===c.id?'aria-current="page"':""}><span class="bd"></span><span>${esc(c.id==="retail"?"RTM":c.id==="dsma"?"D&SMA":c.short)}</span></button>`).join(""));
+  $$("#bnav [data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go==="home"?"#/":`#/c/${b.dataset.go}`));
+  tabs.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(b.dataset.go==="home"?"#/":`#/c/${b.dataset.go}`));
+  requestAnimationFrame(()=>{const a=tabs.querySelector('[aria-current="page"]');const p=$("#pill");if(!a&&p){p.style.width="0";}if(a&&p){p.style.left=a.offsetLeft+"px";p.style.width=a.offsetWidth+"px";p.style.setProperty("--pc",cur==="home"?"var(--ink)":BYID[cur].color);}});
+}
+
+/* home */
+function renderHome(g,anim){
+  let days=0,recs=0,written=0;const todo=[],feed=[];
+  COURSES.forEach(c=>{for(const [k,v] of g[c.id]){days++;recs+=v.length;const e=S.exam[ekey(c.id,k)];if(e)written++;else todo.push({c,k,v});v.forEach(m=>feed.push({c,m}));}});
+  todo.sort((a,b)=>b.k.localeCompare(a.k));feed.sort((a,b)=>b.m.started_at.localeCompare(a.m.started_at));
+  let latest=null;COURSES.forEach(c=>{const f=[...g[c.id].entries()][0];if(f&&(!latest||f[0]>latest.k||(f[0]===latest.k&&f[1].at(-1).started_at>latest.v.at(-1).started_at)))latest={c,k:f[0],v:f[1]};});
+  S.quizPool=[];COURSES.forEach(c=>{for(const [k] of g[c.id]){const e=S.exam[ekey(c.id,k)];if(e)cards(e.markdown).forEach(q=>S.quizPool.push({c,k,...q}));}});
+  const a=d=>"";
+  APP.innerHTML=`
+  <section class="bento ${anim?"anim":""}">
+    ${annStrip(anim)}
+    <div class="card spot b-hero" ${a(0)} style="--c:var(--imc)">
+      <div><div class="live" id="liveEl">${liveHtml()}</div>
+      <h1>Your five courses, <span class="g">written up live</span></h1>
+      <p class="muted" style="margin:0;max-width:44ch">Every lecture NeoSapien records lands here under its course. Turn a class day into detailed exam notes and flashcards in one tap.</p></div>
+      <div><div class="stats"><div class="stat"><div class="v" id="t1">0</div><div class="k">class days</div></div><div class="stat"><div class="v" id="t2">0</div><div class="k">submissions coming up</div></div><div class="stat"><div class="v" id="t3">0</div><div class="k">exam notes written</div></div></div>
+      <button class="btn shine" id="checkBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Check for new classes</button></div>
+    </div>
+    <div class="card b-latest" ${a(80)} style="--c:${latest?latest.c.color:"var(--ink)"}">
+      <div class="gborder"><div class="spot" id="latestCard" role="button" tabindex="0">
+        ${latest?`<div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><span class="tag">Latest class, ${esc(latest.c.short)}</span><small class="muted">${fShort(latest.k)}</small></div>
+        <h3>${esc(fDay(latest.k))}</h3><p class="muted" style="margin:0">Class from ${fmtT(latest.v[0].started_at)} to ${fmtT(latest.v.at(-1).finished_at||latest.v.at(-1).started_at)}. ${esc(latest.v.slice(0,3).map(m=>m.title.split(/ [—-] /)[0]).join("; "))}</p>
+        <div style="margin-top:auto"><span class="btn c mini" style="pointer-events:none">${S.exam[ekey(latest.c.id,latest.k)]?"Read exam notes":"Open this class"}</span></div>`:`<p class="muted">${S.first?"No lectures yet.":"Loading your lectures..."}</p>`}
+      </div></div>
+    </div>
+    <div class="card b-rings" ${a(160)}>
+      <div class="bh"><h2>Exam notes progress</h2><small class="muted">written / class days</small></div>
+      <div class="rings">${COURSES.map(c=>{const n=g[c.id].size,w=[...g[c.id].keys()].filter(k=>S.exam[ekey(c.id,k)]).length,p=n?w/n:0,C=2*Math.PI*30;
+        return `<button class="ring" type="button" data-go="${c.id}" style="--c:${c.color}"><svg viewBox="0 0 74 74"><circle cx="37" cy="37" r="30" fill="none" stroke="var(--rule)" stroke-width="7"/><circle class="arc" cx="37" cy="37" r="30" fill="none" stroke="${c.color}" stroke-width="7" stroke-linecap="round" transform="rotate(-90 37 37)" stroke-dasharray="${C}" stroke-dashoffset="${anim?C:C*(1-p)}" data-to="${C*(1-p)}"/><text x="37" y="42" text-anchor="middle" font-size="15" font-weight="800" fill="currentColor">${w}/${n}</text></svg><b>${esc(c.short)}</b><small>${n?Math.round(p*100)+"% done":"no classes"}</small></button>`;}).join("")}</div>
+    </div>
+    <div class="card b-todo" ${a(240)}>
+      <div class="bh"><h2>Waiting for exam notes</h2><label class="sw-auto" title="Write notes for new classes automatically"><input type="checkbox" id="autoT" ${S.auto?"checked":""}><span></span>Auto-write</label></div>${S.gen?`<p class="muted" style="margin:10px 0 0;font-size:.86rem"><span class="thinking"><i></i><i></i><i></i></span> Writing ${esc(BYID[S.gen.key.split("_")[0]].short)}, ${fShort(S.gen.key.split("_")[1])} notes...</p>`:""}
+      ${todo.length?`<ul class="rowlist">${todo.slice(0,6).map(t=>`<li style="--c:${t.c.color}"><span class="sw"></span><button class="linkbtn t" type="button" data-open="${t.c.id}/${t.k}"><b>${esc(t.c.short)}, ${fDay(t.k)}</b><small>Class from ${fmtT(t.v[0].started_at)} to ${fmtT(t.v.at(-1).finished_at||t.v.at(-1).started_at)}</small></button><button class="btn c mini" type="button" data-write="${t.c.id}/${t.k}" ${sample&&mcp?"":"disabled"}>Write</button></li>`).join("")}</ul>`:`<p class="muted" style="margin:14px 0 0">${S.first?"Every class day has exam notes.":"Loading..."}</p>`}
+    </div>
+    <div class="card b-quiz spot" ${a(320)} style="--c:var(--dsma)" id="quizCard"></div>
+    <div class="card b-tt" ${a(360)} id="ttCard"></div>
+    <div class="card b-feed" ${a(400)}>
+      <div class="bh"><h2>Recently recorded</h2><small class="muted">lectures only</small></div>
+      <ul class="rowlist">${feed.slice(0,7).map(f=>`<li style="--c:${f.c.color}"><span class="sw"></span><button class="linkbtn t" type="button" data-open="${f.c.id}/${dayKey(f.m.started_at)}"><b>${esc(f.m.title)}</b><small>${esc(f.c.short)}, ${fShort(dayKey(f.m.started_at))} at ${fmtT(f.m.started_at)}${fresh(f.m)?", new":""}</small></button></li>`).join("")||`<li class="muted">${S.first?"Nothing yet.":"Loading..."}</li>`}</ul>
+    </div>
+  </section>`;
+  tick($("#t1"),days);tick($("#t2"),annPending().length);tick($("#t3"),written);
+  if(anim)requestAnimationFrame(()=>setTimeout(()=>$$(".arc").forEach(el=>el.style.strokeDashoffset=el.dataset.to),200));
+  $("#checkBtn").onclick=checkNow;
+  const at=$("#autoT");if(at)at.onchange=()=>{S.auto=at.checked;S.autoStop=false;try{localStorage.setItem("lcn.auto",S.auto?"1":"0");}catch(e){}toast(S.auto?"New classes will get exam notes automatically":"Auto-write is off");autoWrite();};
+  const lc=$("#latestCard");if(latest&&lc){const f=()=>go(`#/c/${latest.c.id}/${latest.k}`);lc.onclick=f;lc.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f();}};}
+  $$("[data-go]").forEach(b=>{if(b.closest("#tabs"))return;b.onclick=()=>go(`#/c/${b.dataset.go}`);});
+  $$("[data-open]").forEach(b=>b.onclick=()=>go(`#/c/${b.dataset.open}`));
+  $$("[data-write]").forEach(b=>b.onclick=()=>{const [c,k]=b.dataset.write.split("/");S.dayTab="notes";go(`#/c/${c}/${k}`);setTimeout(()=>generate(c,k),50);});
+  renderQuiz();renderTT();
+  $$("[data-ann]").forEach(b=>b.onclick=()=>go("#/announcements"));const aa=$("[data-annall]");if(aa)aa.onclick=()=>go("#/announcements");
+}
+function renderTT(){
+  const el=$("#ttCard");if(!el)return;const EL={set innerHTML(v){SETH(el,v);}};const tt=S.tt;
+  if(!tt){EL.innerHTML=`<div class="bh"><h2>This week</h2></div><p class="muted" style="margin:12px 0 0">Loading your timetable...</p>`;return;}
+  const now=new Date(Date.now()+330*60000),wd=now.getUTCDay(),mins=now.getUTCHours()*60+now.getUTCMinutes();
+  const times=[["08:30","10:00"],["10:30","12:00"],["13:00","14:30"],["14:45","16:15"]];const days=["Mon","Tue","Wed","Thu","Fri","Sat"];
+  let next=null;for(let d=0;d<7&&!next;d++){const day=((wd-1+d)%7)+1;const list=tt.slots.filter(x=>x.day===day&&x.course).sort((a,b)=>hm(a.start)-hm(b.start));for(const x of list){if(d>0||hm(x.end)>mins){next={x,d};break;}}}
+  const nx=next?`${next.d===0&&hm(next.x.start)<=mins?"Now":next.d===0?"Today":next.d===1?"Tomorrow":days[next.x.day-1]}: ${BYID[next.x.course].short} at ${next.x.start}`:"";
+  EL.innerHTML=`<div class="bh"><h2>This week's timetable</h2>${next?`<span class="tag" style="--c:${BYID[next.x.course].color}">${esc(nx)}</span>`:""}</div>
+   <div class="ttgrid"><span></span>${days.map((d,i)=>`<span class="tth ${i+1===wd?"today":""}">${d}</span>`).join("")}
+   ${times.map(([a,b])=>`<span class="ttt">${a}</span>`+days.map((d,i)=>{const x=tt.slots.find(y=>y.day===i+1&&y.start===a);const live=x&&i+1===wd&&mins>=hm(a)&&mins<=hm(b);
+     if(!x)return `<span class="ttc empty ${i+1===wd?"today":""}"></span>`;
+     if(!x.course)return `<span class="ttc other ${i+1===wd?"today":""}">${esc(x.label)}</span>`;
+     const c=BYID[x.course];return `<button type="button" class="ttc ${live?"live":""} ${i+1===wd?"today":""}" style="--c:${c.color}" data-go="${c.id}">${c.short}${live?'<i>Now</i>':""}</button>`;}).join("")).join("")}</div>
+   <p class="muted" style="font-size:.8rem;margin:10px 0 0">M5, V Trimester, Room C 308. Recordings made during a course slot are sorted into that course automatically.</p>`;
+  el.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(`#/c/${b.dataset.go}`));
+}
+function renderQuiz(){
+  const el=$("#quizCard");if(!el)return;const EL={set innerHTML(v){SETH(el,v);}};const pool=S.quizPool||[];
+  if(!pool.length){EL.innerHTML=`<div class="bh"><h2>Quick quiz</h2></div><p class="muted" style="margin:14px 0 0">Write exam notes for any class day and practice questions from it will appear here.</p>`;return;}
+  if(S.quizI==null||S.quizI>=pool.length)S.quizI=Math.floor(Math.random()*pool.length);
+  const q=pool[S.quizI];el.style.setProperty("--c",q.c.color);
+  EL.innerHTML=`<div class="bh"><h2>Quick quiz</h2><span class="tag">${esc(q.c.short)}, ${fShort(q.k)}</span></div>
+   <p style="font-weight:700;font-size:1.05rem;letter-spacing:-.01em;margin:14px 0 10px">${esc(q.q)}</p>
+   <div id="qa" class="md" style="display:${S.quizShow?"block":"none"};font-size:.94rem">${md(q.a)}</div>
+   <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><button class="btn c mini" id="qShow" type="button">${S.quizShow?"Hide answer":"Show answer"}</button><button class="btn ghost mini" id="qNext" type="button">Another question</button></div>`;
+  $("#qShow").onclick=()=>{S.quizShow=!S.quizShow;renderQuiz();};
+  $("#qNext").onclick=()=>{S.quizShow=false;S.quizI=pool.length>1?(S.quizI+1+Math.floor(Math.random()*(pool.length-1)))%pool.length:0;renderQuiz();};
+}
+
+/* course */
+function renderCourse(g,anim){
+  const c=BYID[S.route.c];const days=g[c.id];const all=[...days.entries()];
+  const written=all.filter(([k])=>S.exam[ekey(c.id,k)]).length;
+  const missing=all.filter(([k,v])=>!S.exam[ekey(c.id,k)]||isStale(c.id,k,v));
+  const q=S.q.toLowerCase();const filt=S.cfilter||"all";
+  const shown=all.filter(([k,v])=>{const e=S.exam[ekey(c.id,k)];if(filt==="done"&&!e)return false;if(filt==="todo"&&e)return false;if(!q)return true;return (fDay(k)+" "+v.map(m=>m.title+" "+m.summary).join(" ")+" "+(e?e.markdown:"")).toLowerCase().includes(q);});
+  const recs=all.reduce((a,[,v])=>a+v.length,0);
+  const bulk=S.bulk&&S.bulk.c===c.id;
+  APP.innerHTML=`<div style="--c:${c.color}">
+   <div class="crumb"><button type="button" class="backlink" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back</button><span class="sep"></span><span>${esc(c.short)}</span></div>
+   <section class="card chead ${anim?"enter":""}">
+     <div><span class="tag">${esc(c.short)}</span><h1>${esc(c.name)}</h1><p class="muted" style="margin:0 0 4px">${esc(TEACH[c.id])}${S.tt?", "+S.tt.slots.filter(x=>x.course===c.id).map(x=>["","Mon","Tue","Wed","Thu","Fri","Sat"][x.day]+" "+x.start).join(", "):""}</p>
+     <div class="cstats"><div><b id="c1">0</b>class days</div><div><b id="c2">0</b>submissions coming up</div><div><b id="c3">0</b>with exam notes</div></div>
+     <div class="bar"><i style="width:${anim?0:(all.length?written/all.length*100:0)}%" data-w="${all.length?written/all.length*100:0}"></i></div></div>
+     <div class="acts">${bulk?`<span class="muted" style="font-size:.9rem">Writing ${S.bulk.done+1} of ${S.bulk.total}...</span><button class="btn ghost" id="bulkStop" type="button">Stop</button>`:`<button class="btn c shine" id="bulkBtn" type="button" ${missing.length&&sample&&mcp&&!S.gen?"":"disabled"}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>${missing.length?`Write all missing notes (${missing.length})`:"All notes written"}</button>`}</div>
+   </section>
+   <div class="toolbar">
+     <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search ${esc(c.short)} classes and notes" value="${esc(S.q)}" aria-label="Search this course"></label>
+     <div class="seg" role="group" aria-label="Filter">${[["all","All"],["todo","Needs notes"],["done","Notes ready"]].map(([v,l])=>`<button type="button" data-f="${v}" aria-pressed="${filt===v}">${l}</button>`).join("")}</div>
+   </div>
+   ${shown.length?`<div class="days">${shown.map(([k,v],i)=>{const e=S.exam[ekey(c.id,k)],st=isStale(c.id,k,v),nw=v.some(fresh);
+     const prev=e?(e.markdown.split("\n").find(l=>l.trim()&&!l.startsWith("#"))||""):v.map(m=>m.title.split(/ [—-] /)[0]).join("; ");
+     return `<button class="dcard spot lift ${anim?"enter":""} ${nw?"new":""}" type="button" data-day="${k}" style="animation-delay:${Math.min(i,8)*55}ms">
+      <div class="dt"><div><div class="num">${fNum(k)}</div><div class="mo">${fMo(k)}, ${fWd(k)}</div></div>${e?(st?'<span class="tag warn">New recordings</span>':'<span class="tag okk">Notes ready</span>'):'<span class="tag">Needs notes</span>'}</div>
+      <p>${esc(prev.replace(/\*\*/g,""))}</p>
+      <div class="foot"><small>Class from ${fmtT(v[0].started_at)} to ${fmtT(v.at(-1).finished_at||v.at(-1).started_at)}</small>${nw?'<span class="tag">new</span>':""}</div></button>`;}).join("")}</div>`
+   :`<div class="card empty"><b>${S.first?(all.length?"Nothing matches":"No classes yet"):"Loading lectures..."}</b>${S.first?(all.length?"Try a different search or filter.":"Lectures appear here as soon as NeoSapien processes them."):""}</div>`}
+  </div>`;
+  tick($("#c1"),all.length);tick($("#c2"),annPending().filter(a=>a.course===c.id).length);tick($("#c3"),written);
+  if(anim)requestAnimationFrame(()=>setTimeout(()=>{const b=$(".bar i");if(b)b.style.width=b.dataset.w+"%";},150));
+  const qi=$("#q");qi.oninput=()=>{S.q=qi.value;const p=qi.selectionStart;render(false);const n=$("#q");n.focus();n.setSelectionRange(p,p);};
+  $$("[data-f]").forEach(b=>b.onclick=()=>{S.cfilter=b.dataset.f;render(false);});
+  $$("[data-day]").forEach(b=>b.onclick=()=>go(`#/c/${c.id}/${b.dataset.day}`));
+  const bb=$("#bulkBtn");if(bb)bb.onclick=()=>bulkWrite(c.id,missing.map(([k])=>k).reverse());
+  const bs=$("#bulkStop");if(bs)bs.onclick=()=>{S.bulk.stop=true;S.genCtl&&S.genCtl.abort();};
+}
+
+/* flashcards */
+function cards(mdSrc){
+  const sec=(mdSrc||"").split(/\n(?=##\s)/).find(s=>/^##\s+practice questions/i.test(s));if(!sec)return[];
+  const out=[];let cur=null;
+  for(const raw of sec.split("\n").slice(1)){const l=raw.trim();if(!l)continue;let m;
+    if((m=l.match(/^(?:\d+[.)]\s*)?\*\*\s*Q\s*\d*\s*[.:)]?\s*\*\*\s*[.:]?\s*(.*)$/i))||(m=l.match(/^(?:\d+[.)]\s*)?Q\s*\d*\s*[.:)]\s*(.*)$/i))){cur={q:m[1].replace(/\*\*/g,""),a:""};out.push(cur);continue;}
+    if((m=l.match(/^[-*]?\s*\*\*\s*(?:A|Answer|Model answer)\s*[.:]?\s*\*\*\s*[.:]?\s*(.*)$/i))||(m=l.match(/^[-*]?\s*(?:A|Answer|Model answer)\s*[.:]\s*(.*)$/i))){if(cur)cur.a+=(cur.a?"\n":"")+m[1];continue;}
+    if((m=l.match(/^\d+[.)]\s+(.*)$/))&&(!cur||cur.a)){cur={q:m[1].replace(/\*\*/g,""),a:""};out.push(cur);continue;}
+    if(cur){if(cur.a)cur.a+="\n"+l;else cur.q+=" "+l.replace(/\*\*/g,"");}
+  }
+  return out.filter(x=>x.q&&x.a);
+}
+
+/* day */
+function renderDay(g,anim){
+  const c=BYID[S.route.c],k=S.route.d,v=g[c.id].get(k)||[],key=ekey(c.id,k),e=S.exam[key],gen=S.gen&&S.gen.key===key,st=isStale(c.id,k,v);
+  const tabs=[["notes","Exam notes"],["cards","Flashcards"],["recs","Recordings"]];
+  APP.innerHTML=`<div style="--c:${c.color}" class="${anim?"enter":""}">
+   <div class="crumb"><button type="button" class="backlink" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back</button><span class="sep"></span><button type="button" id="crHome">Home</button><span>/</span><button type="button" id="crC">${esc(c.short)}</button><span>/</span><span>${fShort(k)}</span></div>
+   <div class="dhead"><div><span class="tag">${esc(c.name)}</span><h1>${esc(fDay(k))}</h1><p class="muted" style="margin:0">${v.length?`Class from ${fmtT(v[0].started_at)} to ${fmtT(v.at(-1).finished_at||v.at(-1).started_at)}`:"No lectures recorded for this day"}</p></div>
+     <div style="display:flex;gap:8px;flex-wrap:wrap">${navDay(g,c.id,k)}</div></div>
+   <div class="segtabs" role="tablist"><span class="ind" id="segInd"></span>${tabs.map(([id,l])=>`<button type="button" role="tab" data-tab="${id}" aria-selected="${S.dayTab===id}">${l}</button>`).join("")}</div>
+   <div id="dayBody"></div></div>`;
+  $("#crHome").onclick=()=>go("#/");$("#crC").onclick=()=>go(`#/c/${c.id}`);
+  $$("[data-nav]").forEach(b=>b.onclick=()=>go(`#/c/${c.id}/${b.dataset.nav}`));
+  $$("[data-tab]").forEach(b=>b.onclick=()=>{S.dayTab=b.dataset.tab;render(false);});
+  requestAnimationFrame(()=>{const a=$('[data-tab][aria-selected="true"]'),i=$("#segInd");if(a&&i){i.style.left=a.offsetLeft+"px";i.style.width=a.offsetWidth+"px";}});
+  const body=$("#dayBody");const BODY={set innerHTML(v){SETH(body,v);}};
+  if(S.dayTab==="notes"){
+    const toc=e&&!gen?[...e.markdown.matchAll(/^##\s+(.+)$/gm)].map(m=>m[1]):[];
+    const actions=gen?`<button class="btn ghost" id="stopBtn" type="button">Stop writing</button>`
+      :e?`<button class="btn c" id="wBtn" type="button" ${sample&&mcp&&!S.gen?"":"disabled"}>Write again</button><button class="btn ghost" id="cpBtn" type="button">Copy</button>${downloads?'<button class="btn ghost" id="dlBtn" type="button">Download</button>':""}`
+      :`<button class="btn c shine" id="wBtn" type="button" ${sample&&mcp&&!S.gen&&v.length?"":"disabled"}>Write exam notes</button>`;
+    BODY.innerHTML=`<div class="notewrap">
+      <aside class="toc" id="toc">${toc.length?`<b>On this page</b>${toc.map(t=>`<a href="#" data-to="${slug(esc(t))}">${esc(t.replace(/\*\*/g,""))}</a>`).join("")}`:""}</aside>
+      <article class="card paper">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px">${actions}${e&&!gen?`<span class="muted" style="font-size:.85rem">Written ${new Date(e.generatedAt).toLocaleString("en-IN",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",...IST})}</span>`:""}</div>
+        ${gen?`<div class="gen"><span class="orb"></span><div><b id="genStep">${esc(S.gen.step)}</b><div class="muted" style="font-size:.85rem">You can move around the site; writing continues.</div></div></div><div class="md" id="genOut">${S.gen.text?md(S.gen.text)+'<span class="caret"></span>':""}</div>`
+        :e?`${st?'<div class="gen" style="background:color-mix(in srgb,var(--warn) 10%,transparent)"><div><b>New recordings were added to this day</b><div class="muted" style="font-size:.88rem">Press Write again to include them.</div></div></div>':""}<div class="md" id="noteMd">${md(e.markdown)}</div>`
+        :`<h2 style="margin:0;font-size:1.4rem;letter-spacing:-.03em">Turn this class into exam notes</h2><p class="muted">Claude reads the notes from every recording of this day and writes one detailed set, keeping only material from ${esc(c.name)}.</p>
+          <div class="intro"><div><b>Concepts</b>Every term and framework defined with the class example</div><div><b>Cases and numbers</b>Brands, figures and formulas the faculty used</div><div><b>Faculty focus</b>What was stressed, plus assignments</div><div><b>Practice</b>Exam questions with model answers, turned into flashcards</div></div>
+          <p class="muted" style="font-size:.88rem;margin:0">Takes about a minute and uses your Claude usage. Notes are saved for next time.</p>`}
+      </article></div>`;
+    const w=$("#wBtn");if(w)w.onclick=()=>generate(c.id,k);
+    const sb=$("#stopBtn");if(sb)sb.onclick=()=>S.genCtl&&S.genCtl.abort();
+    const cp=$("#cpBtn");if(cp)cp.onclick=async()=>{try{await navigator.clipboard.writeText(e.markdown);toast("Notes copied");}catch(x){toast("Copying is blocked here. Use Download.");}};
+    const dl=$("#dlBtn");if(dl)dl.onclick=async()=>{try{await downloads.save({filename:`${c.short} ${k} exam notes.md`,data:e.markdown});}catch(x){if(x.code!=="declined")toast("The file could not be saved.");}};
+    $$("[data-to]").forEach(a=>a.onclick=ev=>{ev.preventDefault();const t=document.getElementById(a.dataset.to);if(t)t.scrollIntoView({behavior:RM?"auto":"smooth"});});
+  } else if(S.dayTab==="cards"){
+    const list=e?cards(e.markdown):[];
+    if(S.fc.key!==key){S.fc={key,i:0,flip:false,marks:{}};}
+    if(!list.length){BODY.innerHTML=`<div class="card empty"><b>${e?"No practice questions found in these notes":"No flashcards yet"}</b>${e?"Press Write again on the Exam notes tab to get questions in the new format.":"Write exam notes for this day first. Its practice questions become flashcards here."}</div>`;return;}
+    const f=S.fc;if(f.i>=list.length)f.i=0;const cd=list[f.i];
+    const known=Object.values(f.marks).filter(x=>x==="k").length;
+    BODY.innerHTML=`<div class="fcwrap">
+      <button class="fc ${f.flip?"flip":""}" id="fc" type="button" aria-label="Flip card"><div class="in">
+        <div class="face front"><span class="lab">Question ${f.i+1} of ${list.length}</span><div class="q">${esc(cd.q)}</div><span class="muted" style="font-size:.85rem">Tap or press space to see the answer</span></div>
+        <div class="face back"><span class="lab">Model answer</span><div class="a md">${md(cd.a)}</div></div></div></button>
+      <div class="dotsrow">${list.map((_,i)=>`<i class="${i===f.i?"cur":""} ${f.marks[i]==="k"?"k":f.marks[i]==="r"?"r":""}"></i>`).join("")}</div>
+      <div class="fcnav"><button class="btn ghost" id="fPrev" type="button">Previous</button><button class="btn ghost" id="fAgain" type="button" style="--c:var(--warn)">Review again</button><button class="btn c" id="fKnew" type="button" style="--c:var(--ok)">I knew it</button><button class="btn ghost" id="fNext" type="button">Next</button><button class="btn ghost" id="fShuf" type="button">Shuffle</button></div>
+      <p class="muted" style="font-size:.88rem;margin:0">${known} of ${list.length} known. Keys: space flips, arrows move.</p></div>`;
+    const flip=()=>{f.flip=!f.flip;$("#fc").classList.toggle("flip",f.flip);};
+    const mv=d=>{f.i=(f.i+d+list.length)%list.length;f.flip=false;render(false);};
+    $("#fc").onclick=flip;$("#fPrev").onclick=()=>mv(-1);$("#fNext").onclick=()=>mv(1);
+    $("#fKnew").onclick=()=>{f.marks[f.i]="k";mv(1);};$("#fAgain").onclick=()=>{f.marks[f.i]="r";mv(1);};
+    $("#fShuf").onclick=()=>{f.i=Math.floor(Math.random()*list.length);f.flip=false;render(false);};
+    S.fcKeys={flip,mv};
+  } else {
+    BODY.innerHTML=v.map((m,i)=>{const open=S.openRec===m._id,n=S.notes.get(m._id);
+      return `<div class="card rec ${open?"open":""} ${anim?"enter":""}" style="animation-delay:${Math.min(i,10)*40}ms">
+       <button type="button" data-rec="${esc(m._id)}" aria-expanded="${open}"><span class="tm">${fmtT(m.started_at)}</span><span class="tt">${esc(m.title)}</span>${fresh(m)?'<span class="tag">new</span>':""}<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></button>
+       <div class="body"><div><div class="inner">
+        <div class="md">${n===undefined?(open?'<p class="muted">Loading notes...</p>':""):n===null?'<p class="muted">Could not load these notes. Close and open again to retry.</p>':md(clean(n))}</div>
+        <div class="foot"><label>Course <select data-move="${esc(m._id)}" ${db?"":"disabled"}>${COURSES.map(x=>`<option value="${x.id}" ${x.id===c.id?"selected":""}>${esc(x.name)}</option>`).join("")}<option value="none">Not a lecture, hide it</option></select></label><span>${fmtT(m.started_at)} to ${fmtT(m.finished_at||m.started_at)}</span></div>
+       </div></div></div></div>`;}).join("")||`<div class="card empty"><b>No recordings</b></div>`;
+    if(v.length&&v.every(m=>m._syn)){BODY.innerHTML=S.owner?`<div class="card empty"><b>No recordings loaded for this day</b>NeoSapien has not returned recordings for this class yet. The exam notes and flashcards are in the other tabs.</div>`:`<div class="card empty"><b>Recording minutes are private</b>Only the page owner can see the raw class recordings. The full exam notes and flashcards are in the other tabs.</div>`;return;}
+    $$("[data-rec]").forEach(b=>b.onclick=async()=>{const id=b.dataset.rec;S.openRec=S.openRec===id?null:id;render(false);if(S.openRec){await fetchNotes(id);if(S.openRec===id)render(false);}});
+    $$("[data-move]").forEach(s=>s.onchange=()=>move(s.dataset.move,s.value));
+  }
+}
+function navDay(g,c,k){const ks=[...g[c].keys()];const i=ks.indexOf(k);const newer=ks[i-1],older=ks[i+1];
+  return `<button class="btn ghost mini" type="button" ${older?`data-nav="${older}"`:"disabled"}>&larr; Earlier class</button><button class="btn ghost mini" type="button" ${newer?`data-nav="${newer}"`:"disabled"}>Later class &rarr;</button>`;}
+
+/* render */
+function render(anim){
+  const g=model();renderNav(g);const bb=$("#backBtn");if(bb){bb.hidden=S.route.v==="home";bb.onclick=back;}
+  renderAlert();if(S.route.v==="ann")renderAnn(anim);else if(S.route.v==="home")renderHome(g,anim);else if(S.route.v==="course")renderCourse(g,anim);else renderDay(g,anim);
+  $$("[data-back]").forEach(b=>b.onclick=back);
+}
+
+/* notes */
+async function fetchNotes(id){
+  if(S.notes.has(id)&&S.notes.get(id)!==null)return S.notes.get(id);
+  if(!mcp)return null;
+  try{const r=await mcp.callTool(SERVER,"get_memory_by_id",{memory_id:id,include_mom:true},{cache:{staleTime:300000,gcTime:86400000}});const p=r.payload||{};
+    const n=(p.mom&&p.mom.trim())?p.mom:(p.summary||"");S.notes.set(id,n);return n;}
+  catch(e){S.notes.set(id,null);mcpErr(e);return null;}
+}
+
+/* generation */
+function prompt(c,k,recs){
+  const head=`You are writing detailed, exam-ready study notes for an MBA student at CHRIST University, Bengaluru.
+Course: ${c.name}. Class date: ${fDay(k)}.
+Below are machine-generated minutes from classroom audio for this day, in time order. They come from speech-to-text, so names and terms may be misheard.
+
+STRICT CONTENT RULE: include ONLY material that belongs to the course "${c.name}". Completely leave out anything else: side conversations, gossip, jokes, food, personal matters, placements, other courses, events, attendance and admin chatter. Do not mention that you left anything out.
+
+Write ONE consolidated set of notes in Markdown:
+- Start with a 2 to 3 sentence overview of what this class covered (no heading).
+- Then "## Key terms": a Markdown table with columns Term | Meaning | Class example, covering every important term from the class (6 to 12 rows, short cells).
+- Organise by topic, not by recording. Use "## " for main topics and "### " for subtopics.
+- For every concept, framework and model, write these on separate lines: "**Definition:** ..." (one or two plain sentences), then "**Class example:** ...", then "**Business example:** ..." with a real, well-known company case (Indian where possible) that shows the concept at work. Only use real, accurate examples. Where useful, add "**Remember:** ..." for a fact to memorise, "**Exam tip:** ..." for how to use it in an answer, and "**Formula:** ..." for any formula. Frameworks with parts or steps get a numbered list.
+- Keep every case, brand example, number, statistic, formula and name the faculty used. Add short standard textbook context only where it helps, marked "(textbook)".
+- Where a term or name was clearly misheard, give the likely correct term in brackets.
+- Add a section "## What the faculty stressed".
+- Add "## Assignments and deadlines" only if any were given in this course.
+- End with "## Practice questions": 6 to 8 exam-style questions. Format each exactly as two lines:
+**Q1.** question text
+**A:** 2 to 4 sentence model answer
+Writing style: clear, direct Indian English, active voice, varied sentence length, address the reader as "you". Never use em dashes. Avoid these words: elevate, delve, leverage, harness, unleash, showcase, highlight, insights, synergies, paradigm, ecosystem, profound, groundbreaking, game changer, meanwhile, subsequently, fostering, revolutionize, reimagine, touch point, deep dive. Do not use "not only X but also Y", "From X to Y" or "That's not X. It's Y" constructions.
+
+Recordings:
+`;
+  let blocks=recs.map(m=>({m,n:clean(S.notes.get(m._id)||m.summary||"")}));
+  const budget=MAX_PROMPT-head.length-600,total=blocks.reduce((a,b)=>a+b.n.length+120,0);
+  if(total>budget){const r=budget/total;blocks=blocks.map(b=>({m:b.m,n:b.n.slice(0,Math.max(300,Math.floor(b.n.length*r)))}));}
+  return head+blocks.map(b=>`\n[${fmtT(b.m.started_at)}] ${b.m.title}\n${b.n}\n`).join("");
+}
+function genUpdate(){ if(S.route.v==="day"&&S.gen&&S.route.c+"_"+S.route.d===S.gen.key&&S.dayTab==="notes"){const o=$("#genOut"),s=$("#genStep");if(o&&s){s.textContent=S.gen.step;o.innerHTML=S.gen.text?md(S.gen.text)+'<span class="caret"></span>':"";}else render(false);} }
+async function generate(cid,k,quiet){
+  if(S.gen){toast("Already writing notes for another class. Wait for it to finish.");return false;}
+  if(!sample||!mcp){toast("Writing notes needs Claude and NeoSapien access in this view.");return false;}
+  const c=BYID[cid],key=ekey(cid,k),recs=model()[cid].get(k)||[];if(!recs.length)return false;
+  S.gen={key,step:"Getting ready",text:""};S.genCtl=new AbortController();render(false);
+  try{
+    for(let i=0;i<recs.length;i++){if(S.genCtl.signal.aborted)throw{code:"cancelled"};S.gen.step=`Reading recording ${i+1} of ${recs.length} from NeoSapien`;genUpdate();await fetchNotes(recs[i]._id);}
+    S.gen.step="Claude is thinking. Notes will start appearing in a moment";genUpdate();
+    const res=await sample(prompt(c,k,recs),{modelTier:"default",cache:false,signal:S.genCtl.signal,onText:({text})=>{S.gen.step="Writing your notes";S.gen.text=text;genUpdate();}});
+    const e={markdown:res.text,generatedAt:new Date().toISOString(),recordingIds:recs.map(m=>m._id),course:cid,day:k};
+    S.exam[key]=e;S.gen=null;
+    if(db){try{await db.doc("examnotes/"+key).set(e);}catch(x){toast("Notes written but not saved for next time.");}}
+    if(!quiet)toast(`Exam notes ready: ${c.short}, ${fShort(k)}${res.truncated?" (cut short, try Write again)":""}`);
+    render(false);return true;
+  }catch(x){
+    const code=x&&x.code;S.gen=null;
+    const msg=code==="cancelled"?"Stopped. Nothing was saved.":code==="not_granted"||code==="sampling_disabled"||code==="capability_disabled"?"Writing notes with Claude is not allowed in this view.":code==="rate_limited"?"You hit a usage limit. Try again later.":code==="prompt_too_large"?"This day has too much material to send at once.":code==="session_expired"?"Sign in to claude.ai again, then retry.":code==="refused"?"Claude would not write notes from this material.":"The notes could not be written. Try again.";
+    toast(msg);render(false);return code==="cancelled"?null:false;
+  }finally{S.genCtl=null;}
+}
+S.auto=(()=>{try{return localStorage.getItem("lcn.auto")!=="0";}catch(e){return true;}})();S.autoTried=new Set();
+function autoWrite(){
+  if(!S.owner||!S.auto||S.autoStop||S.gen||S.bulk||!sample||!mcp||!S.first||!S.examLoaded)return;
+  const m=model();const now=Date.now();let pick=null;
+  for(const c of COURSES){for(const [k,v] of m[c.id]){const key=ekey(c.id,k);if(S.autoTried.has(key))continue;
+    const last=new Date(v.at(-1).finished_at||v.at(-1).started_at).getTime();if(now-last<40*60000)continue;
+    if(!S.exam[key]||isStale(c.id,k,v)){if(!pick||k>pick.k)pick={c:c.id,k};}}}
+  if(!pick)return;
+  S.autoTried.add(ekey(pick.c,pick.k));
+  generate(pick.c,pick.k,true).then(r=>{if(r===true){toast(`New exam notes written: ${BYID[pick.c].short}, ${fShort(pick.k)}`);setTimeout(autoWrite,1500);}else S.autoStop=true;});
+}
+async function bulkWrite(cid,keys){
+  if(S.gen||S.bulk)return;S.bulk={c:cid,done:0,total:keys.length,stop:false};render(false);
+  let ok=0;
+  for(const k of keys){if(S.bulk.stop)break;const r=await generate(cid,k,true);if(r===true)ok++;else if(r===false)break;S.bulk.done++;if(S.route.v==="course")render(false);}
+  S.bulk=null;toast(`Wrote ${ok} set${ok===1?"":"s"} of exam notes for ${BYID[cid].short}`);render(false);
+}
+
+/* moving */
+async function move(id,course){
+  S.overrides[id]=course;render(false);
+  if(!db)return;
+  try{await db.doc("sorting/"+id).set({course,source:"you",at:new Date().toISOString()});toast(course==="none"?"Hidden from the site":"Moved to "+BYID[course].short);}
+  catch(e){toast("That change could not be saved.");}
+}
+
+/* palette */
+let palSel=0,palItems=[];
+function openPal(){$("#scrim").classList.add("on");$("#pal").classList.add("on");const i=$("#palIn");i.value="";palSearch("");setTimeout(()=>i.focus(),30);}
+function closePal(){$("#scrim").classList.remove("on");$("#pal").classList.remove("on");}
+function palSearch(q){
+  const g=model();const ql=q.toLowerCase().trim();const res=[];
+  COURSES.forEach(c=>{if(!ql||c.name.toLowerCase().includes(ql)||c.short.toLowerCase().includes(ql))res.push({c,label:c.name,sub:"Course",hash:`#/c/${c.id}`,score:3});
+    for(const [k,v] of g[c.id]){const e=S.exam[ekey(c.id,k)];const text=(fDay(k)+" "+v.map(m=>m.title+" "+m.summary).join(" ")+" "+(e?e.markdown:"")).toLowerCase();
+      if(!ql||text.includes(ql)){const hit=ql?v.find(m=>(m.title+" "+m.summary).toLowerCase().includes(ql)):null;res.push({c,label:`${c.short}, ${fDay(k)}`,sub:hit?hit.title:(e?"Exam notes ready":"Class day"),hash:`#/c/${c.id}/${k}`,score:ql&&fDay(k).toLowerCase().includes(ql)?2:1});}}});
+  res.sort((a,b)=>b.score-a.score);palItems=res.slice(0,40);palSel=0;drawPal();
+}
+function drawPal(){$("#palList").innerHTML=palItems.map((r,i)=>`<li><button type="button" role="option" data-i="${i}" aria-selected="${i===palSel}" style="--c:${r.c.color}"><span class="sw"></span><span class="t"><b>${esc(r.label)}</b><small>${esc(r.sub)}</small></span></button></li>`).join("")||`<li class="muted" style="padding:14px">Nothing found</li>`;
+  $$("#palList [data-i]").forEach(b=>b.onclick=()=>{closePal();go(palItems[+b.dataset.i].hash);});
+  const s=$(`#palList [data-i="${palSel}"]`);if(s)s.scrollIntoView({block:"nearest"});}
+$("#palIn").oninput=e=>palSearch(e.target.value);
+$("#palIn").onkeydown=e=>{if(e.key==="ArrowDown"){e.preventDefault();palSel=Math.min(palItems.length-1,palSel+1);drawPal();}else if(e.key==="ArrowUp"){e.preventDefault();palSel=Math.max(0,palSel-1);drawPal();}else if(e.key==="Enter"&&palItems[palSel]){closePal();go(palItems[palSel].hash);}};
+$("#palBtn").onclick=openPal;$("#scrim").onclick=closePal;$("#homeBtn").onclick=()=>go("#/");
+$("#themeBtn").onclick=()=>{const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("lcn.theme",r.dataset.theme);}catch(e){}};
+document.addEventListener("keydown",e=>{
+  if(e.altKey&&e.key==="ArrowLeft"){e.preventDefault();back();return;}
+  if(e.key==="Backspace"&&!/input|select|textarea/i.test(document.activeElement.tagName)&&!$("#pal").classList.contains("on")&&!$("#agent").classList.contains("on")){e.preventDefault();back();return;}
+  if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();$("#pal").classList.contains("on")?closePal():openPal();return;}
+  if(e.key==="Escape"&&$("#pal").classList.contains("on")){closePal();return;}
+  const typing=/input|select|textarea/i.test(document.activeElement.tagName);
+  if(e.key==="/"&&!typing){e.preventDefault();openPal();return;}
+  if(S.route.v==="day"&&S.dayTab==="cards"&&S.fcKeys&&!typing&&!$("#pal").classList.contains("on")){if(e.key===" "){e.preventDefault();S.fcKeys.flip();}if(e.key==="ArrowRight")S.fcKeys.mv(1);if(e.key==="ArrowLeft")S.fcKeys.mv(-1);}
+});
+addEventListener("scroll",()=>{const b=$("#readbar");if(S.route.v==="day"&&S.dayTab==="notes"){const h=document.documentElement;b.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+"%";b.style.background=BYID[S.route.c].color;
+  const hs=$$("#noteMd h2");let cur=null;hs.forEach(x=>{if(x.getBoundingClientRect().top<140)cur=x.id;});$$("#toc a").forEach(a=>a.classList.toggle("on",a.dataset.to===cur));}else b.style.width="0";},{passive:true});
+
+/* ---------- announcements ---------- */
+S.ann={};S.annForm=null;S.annFilter="all";S.props=null;S.scan=null;
+try{S.done=new Set(JSON.parse(localStorage.getItem("lcn.done")||"[]"));S.dismissed=new Set(JSON.parse(localStorage.getItem("lcn.dismiss")||"[]"));}catch(e){S.done=new Set();S.dismissed=new Set();}
+const saveLocal=()=>{try{localStorage.setItem("lcn.done",JSON.stringify([...S.done]));localStorage.setItem("lcn.dismiss",JSON.stringify([...S.dismissed]));}catch(e){}};
+const KINDS=["CIA","Submission","Assignment","Exam","Presentation","Other"];
+function aStatus(a){if(!a.due)return "tba";return new Date(a.due).getTime()>Date.now()?"up":"past";}
+function fDue(iso){return new Date(iso).toLocaleString("en-IN",{weekday:"short",day:"numeric",month:"short",hour:"numeric",minute:"2-digit",hour12:true,...IST});}
+function rel(iso){const d=new Date(iso).getTime()-Date.now(),ab=Math.abs(d),H=3600e3,Dd=24*H;
+  const todayK=dayKey(new Date().toISOString()),dk=dayKey(iso);
+  if(d>0){if(ab<H)return `Due in ${Math.max(1,Math.round(ab/60000))} min`;if(dk===todayK)return `Due today, in ${Math.max(1,Math.round(ab/H))} h`;if(dayKey(new Date(Date.now()+Dd).toISOString())===dk)return "Due tomorrow";return `Due in ${Math.ceil(ab/Dd)} days`;}
+  if(ab<Dd)return `Closed ${Math.max(1,Math.round(ab/H))} h ago`;const n=Math.round(ab/Dd);return `Closed ${n} day${n===1?"":"s"} ago`;}
+const hot=a=>a.due&&aStatus(a)==="up"&&new Date(a.due)-Date.now()<48*3600e3;
+function annList(){return Object.entries(S.ann).map(([id,a])=>({id,...a})).filter(a=>BYID[a.course]);}
+function annPending(){return annList().filter(a=>aStatus(a)!=="past"&&!S.done.has(a.id));}
+function sortAnn(l){return l.sort((a,b)=>{const sa=aStatus(a),sb=aStatus(b);const o={up:0,tba:1,past:2};if(o[sa]!==o[sb])return o[sa]-o[sb];if(sa==="past")return b.due.localeCompare(a.due);if(sa==="up")return a.due.localeCompare(b.due);return (b.createdAt||"").localeCompare(a.createdAt||"");});}
+function updateBadge(){const b=$("#annBadge");if(!b)return;const p=annPending();b.hidden=!p.length;b.textContent=p.length;b.classList.toggle("hot",p.some(hot));}
+function renderAlert(){updateBadge();const el=$("#annAlert");if(!el)return;const EL={set innerHTML(v){SETH(el,v);}};
+  const urgent=S.alertClosed?[]:sortAnn(annPending().filter(hot));
+  if(!urgent.length||S.route.v==="ann"){EL.innerHTML="";return;}
+  const a=urgent[0],c=BYID[a.course];
+  EL.innerHTML=`<div class="alertbar"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/></svg></span>
+   <div class="txt"><b>${esc(rel(a.due))}: ${esc(a.title)}</b><div class="muted" style="font-size:.86rem">${esc(c.short)}, ${esc(fDue(a.due))}${urgent.length>1?`, plus ${urgent.length-1} more due within 2 days`:""}</div></div>
+   <button class="btn mini" type="button" id="alertGo" style="background:var(--ok);color:#fff">View</button><button class="x" type="button" id="alertX" aria-label="Hide for now">&times;</button></div>`;
+  $("#alertGo").onclick=()=>go("#/announcements");el.querySelector(".txt").onclick=()=>go("#/announcements");$("#alertX").onclick=()=>{S.alertClosed=true;renderAlert();};
+}
+function annStrip(anim){
+  const p=sortAnn(annPending());if(!p.length)return "";
+  return `<div class="card b-ann"><div class="bh"><h2>Coming up</h2><button class="btn ghost mini" type="button" data-annall>All announcements</button></div>
+   <div class="annrow">${p.slice(0,4).map(a=>{const c=BYID[a.course],st=aStatus(a);return `<button type="button" class="amini" data-ann="${esc(a.id)}"><span class="tag" style="--c:${c.color}">${esc(c.short)}, ${esc(a.kind||"")}</span><b>${esc(a.title)}</b><span class="chipdue ${st==="tba"?"tba":""} ${hot(a)?"hot":""}">${st==="tba"?"Date to be announced":esc(rel(a.due))}</span>${a.due?`<small>${esc(fDue(a.due))}</small>`:""}</button>`;}).join("")}</div></div>`;
+}
+function annCard(a){const c=BYID[a.course],st=aStatus(a),done=S.done.has(a.id);
+  return `<article class="acard ${st} ${done?"done":""}" style="--c:${c.color}"><span class="abar"></span><div class="in">
+    <div class="top"><span class="tag" style="--c:${c.color}">${esc(c.short)}</span><span class="tag" style="--c:var(--soft)">${esc(a.kind||"Other")}</span>
+      <span class="chipdue ${st==="tba"?"tba":st==="past"?"past":""} ${hot(a)&&!done?"hot":""}">${st==="tba"?"Date to be announced":esc(rel(a.due))}</span></div>
+    <h3>${esc(a.title)}</h3>
+    ${a.due?`<div style="font-size:.9rem;color:var(--soft);font-weight:600">${st==="past"?"Was due":"Due"} ${esc(fDue(a.due))}</div>`:""}
+    ${a.details?`<p>${esc(a.details)}</p>`:""}
+    <div class="meta">${a.source?esc(a.source)+", ":""}added by ${esc(a.createdBy||"you")}</div>
+    <div class="acts">${st!=="past"?`<button class="btn mini ${done?"ghost":"c"}" style="--c:var(--ok)" type="button" data-done="${esc(a.id)}">${done?"Undo submitted":"Mark as submitted"}</button>`:""}
+      <button class="btn ghost mini" type="button" data-edit="${esc(a.id)}">Edit</button><button class="btn ghost mini" type="button" data-del="${esc(a.id)}">Delete</button></div></div></article>`;}
+function annFormHtml(){const f=S.annForm;const d=f.due?dayKey(f.due):"";const t=f.due?new Date(new Date(f.due).getTime()+330*60000).toISOString().slice(11,16):"23:59";
+  return `<form class="card aform" id="annF"><label class="full">What is due<input name="title" required maxlength="140" value="${esc(f.title||"")}" placeholder="For example: SBM CIA 1 mind map submission"></label>
+   <label>Course<select name="course">${COURSES.map(c=>`<option value="${c.id}" ${f.course===c.id?"selected":""}>${esc(c.name)}</option>`).join("")}</select></label>
+   <label>Type<select name="kind">${KINDS.map(k=>`<option ${f.kind===k?"selected":""}>${k}</option>`).join("")}</select></label>
+   <label>Due date<input type="date" name="date" value="${d}"></label><label>Due time<input type="time" name="time" value="${t}"></label>
+   <label class="chk full"><input type="checkbox" name="tba" ${(f.id||f.fromProp!=null)&&!f.due?"checked":""}> Date not announced yet</label>
+   <label class="full">Details<textarea name="details" rows="3" maxlength="1500" placeholder="Format, group size, where to submit">${esc(f.details||"")}</textarea></label>
+   <div class="row full"><button class="btn c" style="--c:var(--ok)" type="submit">${f.id?"Save changes":"Post announcement"}</button><button class="btn ghost" type="button" id="annCancel">Cancel</button></div></form>`;}
+function renderAnn(anim){
+  const all=sortAnn(annList()).filter(a=>S.annFilter==="all"||a.course===S.annFilter);
+  const up=all.filter(a=>aStatus(a)==="up"),tba=all.filter(a=>aStatus(a)==="tba"),past=all.filter(a=>aStatus(a)==="past");
+  const scanning=S.scan&&S.scan.busy;
+  APP.innerHTML=`<div style="--c:var(--ok)">
+   <div class="crumb"><button type="button" class="backlink" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back</button><span class="sep"></span><span>Announcements</span></div>
+   <section class="card ahero ${anim?"enter":""}"><div><span class="tag">Announcements</span><h1>Submissions and deadlines</h1><p class="muted" style="margin:0;max-width:60ch">Green means it still needs doing. Once the due date passes, the announcement stays here in grey.${S.owner?"":" You can tick items off for yourself; only the owner posts announcements."}</p></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn c" style="--c:var(--ok)" type="button" id="annAdd">Add announcement</button><button class="btn ghost" type="button" id="annScan" ${sample&&mcp&&!scanning?"":"disabled"}>${scanning?"Scanning...":"Find deadlines in my classes"}</button></div></section>
+   ${S.annForm?annFormHtml():""}
+   ${S.scan?`<div class="gen" style="margin-top:14px;--c:var(--imc)">${scanning?'<span class="orb"></span>':""}<div><b>${esc(S.scan.msg)}</b></div></div>`:""}
+   ${S.props&&S.props.length?`<div class="asec"><h2>Found in your classes</h2><span class="tag" style="--c:var(--imc)">${S.props.length} to review</span></div><div class="alist">${S.props.map((p,i)=>`<div class="prop"><div class="t"><span class="tag" style="--c:${BYID[p.course].color}">${esc(BYID[p.course].short)}, ${esc(p.kind)}</span><b style="margin-top:6px">${esc(p.title)}</b><small>${p.due?"Due "+esc(fDue(p.due)):"Date not announced"}${p.heard?", mentioned "+esc(p.heard):""}</small>${p.details?`<p class="muted" style="margin:6px 0 0;font-size:.9rem">${esc(p.details)}</p>`:""}</div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn c mini" style="--c:var(--ok)" type="button" data-padd="${i}">Post it</button><button class="btn ghost mini" type="button" data-pedit="${i}">Edit first</button><button class="btn ghost mini" type="button" data-pdis="${i}">Dismiss</button></div></div>`).join("")}</div>`:""}
+   <div class="toolbar"><div class="seg" role="group" aria-label="Course filter">${[["all","All"],...COURSES.map(c=>[c.id,c.short])].map(([v,l])=>`<button type="button" data-af="${v}" aria-pressed="${S.annFilter===v}">${l}</button>`).join("")}</div></div>
+   <div class="asec"><h2>Coming up</h2><span class="chipdue">${up.length}</span></div><div class="alist">${up.map(annCard).join("")||'<p class="muted">Nothing with a due date coming up.</p>'}</div>
+   ${tba.length?`<div class="asec"><h2>Date not announced yet</h2><span class="chipdue tba">${tba.length}</span></div><div class="alist">${tba.map(annCard).join("")}</div>`:""}
+   ${past.length?`<div class="asec"><h2>Past</h2><span class="chipdue past">${past.length}</span></div><div class="alist">${past.map(annCard).join("")}</div>`:""}
+  </div>`;
+  $("#annAdd").onclick=()=>{S.annForm={course:S.annFilter!=="all"?S.annFilter:"sbm",kind:"CIA"};render(false);setTimeout(()=>{const i=$('#annF [name="title"]');i&&i.focus();},30);};
+  $("#annScan").onclick=scanDeadlines;
+  $$("[data-af]").forEach(b=>b.onclick=()=>{S.annFilter=b.dataset.af;render(false);});
+  $$("[data-done]").forEach(b=>b.onclick=()=>{const id=b.dataset.done;S.done.has(id)?S.done.delete(id):S.done.add(id);saveLocal();render(false);});
+  $$("[data-edit]").forEach(b=>b.onclick=()=>{const a=S.ann[b.dataset.edit];S.annForm={id:b.dataset.edit,...a};render(false);scrollTo({top:0,behavior:RM?"auto":"smooth"});});
+  $$("[data-del]").forEach(b=>b.onclick=async()=>{const a=S.ann[b.dataset.del];if(!db||!confirm(`Delete "${a.title}"?`))return;try{await db.doc("announcements/"+b.dataset.del).delete();toast("Deleted");}catch(e){toast(e.code==="permission_denied"?"Only the page owner can delete announcements.":"Could not delete it.");}});
+  const f=$("#annF");if(f){$("#annCancel").onclick=()=>{S.annForm=null;render(false);};f.onsubmit=saveAnn;}
+  $$("[data-padd]").forEach(b=>b.onclick=()=>postProp(+b.dataset.padd));
+  $$("[data-pedit]").forEach(b=>b.onclick=()=>{const p=S.props[+b.dataset.pedit];S.annForm={...p,id:null,fromProp:+b.dataset.pedit};render(false);scrollTo({top:0,behavior:RM?"auto":"smooth"});});
+  $$("[data-pdis]").forEach(b=>b.onclick=()=>{const p=S.props.splice(+b.dataset.pdis,1)[0];S.dismissed.add(p.key);saveLocal();render(false);});
+}
+function annId(t){return (t.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,40)+"-"+Math.random().toString(36).slice(2,7));}
+async function saveAnn(e){e.preventDefault();if(!db){toast("Saving is not available in this view.");return;}
+  const f=new FormData(e.target);const tba=f.get("tba")==="on"||!f.get("date");
+  const due=tba?null:`${f.get("date")}T${f.get("time")||"23:59"}:00+05:30`;
+  const prev=S.annForm.id?S.ann[S.annForm.id]:null;
+  const doc={title:String(f.get("title")).trim(),course:f.get("course"),kind:f.get("kind"),due,details:String(f.get("details")||"").trim(),source:prev?prev.source||"":(S.annForm.heard?"Found in class, "+S.annForm.heard:""),createdAt:prev?prev.createdAt:new Date().toISOString(),createdBy:prev?prev.createdBy||"you":"you"};
+  if(!doc.title){toast("Add what is due.");return;}
+  const id=S.annForm.id||annId(doc.title);
+  try{await db.doc("announcements/"+id).set(doc);if(S.annForm.fromProp!=null&&S.props){const p=S.props.splice(S.annForm.fromProp,1)[0];if(p)S.dismissed.add(p.key);saveLocal();}S.annForm=null;toast(prev?"Announcement updated":"Announcement posted");render(false);}
+  catch(x){toast(x.code==="permission_denied"?"Only the page owner can post announcements.":"Could not save it. Try again.");}
+}
+async function postProp(i){const p=S.props[i];if(!db)return;
+  try{await db.doc("announcements/"+annId(p.title)).set({title:p.title,course:p.course,kind:p.kind,due:p.due,details:p.details||"",source:p.heard?"Found in class, "+p.heard:"Found in class notes",createdAt:new Date().toISOString(),createdBy:"Claude, approved by you"});
+    S.props.splice(i,1);S.dismissed.add(p.key);saveLocal();toast("Announcement posted");render(false);}
+  catch(x){toast(x.code==="permission_denied"?"Only the page owner can post announcements.":"Could not post it.");}}
+const DEADLINE=/cia|assign|submi|deadline|\bdue\b|exam|test|quiz|presentation|report|homework|project|mid-?term|viva|classroom|next (mon|tue|wed|thu|fri|sat)|this (mon|tue|wed|thu|fri|sat)|by (mon|tue|wed|thu|fri|sat|tomorrow|end of)/i;
+async function scanDeadlines(){
+  if(!sample||!mcp)return;
+  S.scan={busy:true,msg:"Collecting your recent classes"};S.props=null;render(false);
+  try{
+    const m=model();const since=new Date(Date.now()-21*864e5).toISOString().slice(0,10);const chunks=[];let n=0;
+    const jobs=[];COURSES.forEach(c=>{for(const [k,v] of m[c.id])if(k>=since)jobs.push({c,k,v});});
+    jobs.sort((a,b)=>a.k.localeCompare(b.k));
+    for(const j of jobs){n++;S.scan.msg=`Reading ${j.c.short}, ${fShort(j.k)} (${n} of ${jobs.length})`;render(false);
+      const e=S.exam[ekey(j.c.id,j.k)];const lines=[];
+      if(e){const sec=e.markdown.split(/\n(?=##\s)/).find(x=>/^##\s+assignments/i.test(x));if(sec)lines.push(sec);}
+      for(const r of j.v){const t=await fetchNotes(r._id);clean(t||"").split("\n").forEach(l=>{if(DEADLINE.test(l))lines.push(l.trim());});}
+      if(lines.length)chunks.push(`### ${j.c.name} (id ${j.c.id}), class on ${fDay(j.k)} (${j.k})\n${[...new Set(lines)].join("\n").slice(0,4000)}`);}
+    if(!chunks.length){S.scan={busy:false,msg:"No deadlines mentioned in the last three weeks of classes."};render(false);return;}
+    S.scan.msg="Claude is picking out the deadlines";render(false);
+    const existing=annList().map(a=>`- [${a.course}] ${a.title} (due ${a.due||"not announced"})`).join("\n")||"none";
+    const prompt=`From these notes of an MBA student's classes, list every submission, CIA, assignment, exam, test or presentation that the faculty announced. Only these five courses count: sbm (Strategic Brand Management), retail (Retail Management / RTM), entre (Entrepreneurship and Intrapreneurship), imc (Integrated Marketing Communication), dsma (Digital and Social Media Analytics). Ignore anything else, including Ascend, placements and clubs.
+Today is ${new Date().toLocaleDateString("en-IN",{...IST,weekday:"long",day:"numeric",month:"long",year:"numeric"})}. Resolve relative dates such as "next Monday" or "this Friday" against the date of the class where they were said. If a time is not given, use the course's class start time when the item happens in class, otherwise 23:59. If no date was given at all, use null.
+Skip anything already on this list, unless the new notes give it a date it lacks:
+${existing}
+
+Return JSON only: an array of objects {"title": short clear title starting with the course short name, "course": one of sbm|retail|entre|imc|dsma, "kind": one of CIA|Submission|Assignment|Exam|Presentation|Other, "due": ISO 8601 with +05:30 offset or null, "details": one or two plain sentences on what to do, "heard": class date like "Mon 21 Sep"}. Return [] if there is nothing new. Never use em dashes.
+
+Notes:
+${chunks.join("\n\n").slice(0,52000)}`;
+    let res=await sample.json(prompt,{modelTier:"default"});
+    if(!Array.isArray(res))res=Array.isArray(res&&res.items)?res.items:[];
+    const norm=t=>new Set(String(t).toLowerCase().replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(w=>w.length>2));
+    const sim=(a,b)=>{const A=norm(a),B=norm(b);let i=0;A.forEach(w=>{if(B.has(w))i++;});return i/Math.max(1,Math.min(A.size,B.size));};
+    const ex=annList();
+    S.props=res.filter(p=>p&&BYID[p.course]&&p.title).map(p=>({title:String(p.title).slice(0,140),course:p.course,kind:KINDS.includes(p.kind)?p.kind:"Other",due:(p.due&&!isNaN(new Date(p.due)))?new Date(p.due).toISOString():null,details:String(p.details||"").slice(0,600),heard:String(p.heard||""),key:p.course+"|"+String(p.title).toLowerCase()}))
+      .filter(p=>!S.dismissed.has(p.key)&&!ex.some(a=>a.course===p.course&&sim(a.title,p.title)>=.6&&(a.due||!p.due)));
+    S.scan={busy:false,msg:S.props.length?`Found ${S.props.length} possible announcement${S.props.length===1?"":"s"}. Check each one, then post it.`:"Nothing new found. Your announcements are up to date."};
+  }catch(x){const c=x&&x.code;S.scan={busy:false,msg:c==="rate_limited"?"You hit a usage limit. Try again later.":c==="not_granted"||c==="sampling_disabled"?"Claude is not allowed in this view.":c==="invalid_json"?"Claude's answer could not be read. Try again.":"The scan did not finish. Try again."};}
+  render(false);
+}
+setInterval(()=>{const a=document.activeElement;if(a&&/input|textarea|select/i.test(a.tagName))return;if(S.annForm)return;if(S.route.v==="ann"||S.route.v==="home")render(false);else renderAlert();},60000);
+$("#annBtn").onclick=()=>go("#/announcements");
+
+/* ---------- notes assistant (agent) ---------- */
+const SUGG=["Summarise everything taught in SBM so far","What assignments and deadlines do I have across all courses?","Make me a 7-day revision plan for all five courses","Quiz me with 5 questions on Retail Management","Explain the Johari Window with the class example","What is my next class and what was covered last time?"];
+S.chat=[];try{S.chat=JSON.parse(localStorage.getItem("lcn.chat")||"[]");}catch(e){}
+let agentCtl=null,agentBusy=false,toolsOk=null;
+const courseArg=v=>{const x=String(v||"").toLowerCase().replace(/[^a-z&]/g,"");const map={sbm:"sbm",strategicbrandmanagement:"sbm",brand:"sbm",retail:"retail",rtm:"retail",retailmanagement:"retail",retailingmanagement:"retail",entre:"entre","e&i":"entre",ei:"entre",entrepreneurship:"entre",entrepreneurshipandintrapreneurship:"entre",imc:"imc",integratedmarketingcommunication:"imc",integratedmarketingcommunications:"imc",dsma:"dsma","d&sma":"dsma",dsm:"dsma",digitalandsocialmediaanalytics:"dsma"};return map[x]||(BYID[x]?x:null);};
+function agentTools(onStep){
+  const g=()=>model();
+  return [
+   {name:"list_classes",description:"Lists recorded class days. Returns course id, date (YYYY-MM-DD), weekday, number of recordings, and whether exam notes exist. Optional course filter: sbm, retail, entre, imc, dsma.",
+    inputSchema:{type:"object",properties:{course:{type:"string",description:"Optional course id"}}},
+    execute:(i)=>{const c=i&&i.course?courseArg(i.course):null;const m=g();const out=[];COURSES.forEach(x=>{if(c&&x.id!==c)return;for(const [k,v] of m[x.id])out.push({course:x.id,courseName:x.name,date:k,weekday:fWd(k),recordings:v.length,hasExamNotes:!!S.exam[ekey(x.id,k)],recordingTitles:v.map(r=>r.title).slice(0,12)});});onStep("Checked the class list");return out;}},
+   {name:"get_exam_notes",description:"Returns the saved exam notes (Markdown) for one class day. Use this first for any question about class content. Throws if none exist yet; then use get_lecture_minutes.",
+    inputSchema:{type:"object",properties:{course:{type:"string"},date:{type:"string",description:"YYYY-MM-DD"}},required:["course","date"]},
+    execute:(i)=>{const c=courseArg(i.course),d=String(i.date||"");const e=c&&S.exam[ekey(c,d)];onStep(`Read ${c?BYID[c].short:"?"} exam notes, ${d?fShort(d):""}`);if(!e)throw new Error("No exam notes for that course and date. Use get_lecture_minutes instead.");return e.markdown.slice(0,30000);}},
+   {name:"get_lecture_minutes",description:"Returns the cleaned raw minutes of every recording in one class day, in time order. Slower; use when exam notes are missing or more detail is needed.",
+    inputSchema:{type:"object",properties:{course:{type:"string"},date:{type:"string",description:"YYYY-MM-DD"}},required:["course","date"]},
+    execute:async(i,ctx)=>{const c=courseArg(i.course),d=String(i.date||"");const recs=c?(g()[c].get(d)||[]):[];if(!recs.length)throw new Error("No recordings for that course and date.");
+      onStep(`Reading class minutes from ${BYID[c].short}, ${fShort(d)}`);
+      let out="";for(const r of recs){if(ctx&&ctx.signal&&ctx.signal.aborted)break;const n=await fetchNotes(r._id);out+=`\n[${fmtT(r.started_at)}] ${r.title}\n${clean(n||r.summary||"")}\n`;if(out.length>30000)break;}return out.slice(0,30000);}},
+   {name:"search_notes",description:"Searches all class titles, summaries and exam notes for a word or phrase. Returns matching course, date and a short snippet.",
+    inputSchema:{type:"object",properties:{query:{type:"string"}},required:["query"]},
+    execute:(i)=>{const q=String(i.query||"").toLowerCase().trim();if(!q)throw new Error("Empty query");const m=g();const hits=[];
+      COURSES.forEach(x=>{for(const [k,v] of m[x.id]){const e=S.exam[ekey(x.id,k)];const hay=(v.map(r=>r.title+". "+r.summary).join(" ")+" "+(e?e.markdown:""));const at=hay.toLowerCase().indexOf(q);if(at>=0)hits.push({course:x.id,date:k,snippet:hay.slice(Math.max(0,at-160),at+220).replace(/\s+/g," ")});}});
+      onStep(`Searched for "${q}"`);return hits.slice(0,20);}},
+   {name:"get_announcements",description:"Returns all announcements (CIAs, submissions, exams) with course, due date, status (upcoming, date not announced, past) and details.",
+    execute:()=>{onStep("Checked announcements");return sortAnn(annList()).map(a=>({title:a.title,course:a.course,kind:a.kind,due:a.due?fDue(a.due):null,status:{up:"upcoming",tba:"date not announced",past:"past"}[aStatus(a)],submittedByViewer:S.done.has(a.id),details:a.details}));}},
+   {name:"get_timetable",description:"Returns the weekly M5 timetable, teachers, and today's date and time in India.",
+    execute:()=>{onStep("Checked your timetable");const now=new Date();return {nowIST:now.toLocaleString("en-IN",{...IST,weekday:"long",day:"numeric",month:"long",year:"numeric",hour:"2-digit",minute:"2-digit"}),teachers:TEACH,slots:(S.tt&&S.tt.slots||[]).map(x=>({day:["","Mon","Tue","Wed","Thu","Fri","Sat"][x.day],start:x.start,end:x.end,course:x.course||null,label:x.label||null}))};}}
+  ];
+}
+function agentPrompt(msg){
+  const m=model();const idx=COURSES.map(c=>`${c.short} (${c.name}, ${TEACH[c.id]}): ${[...m[c.id].keys()].sort().map(k=>fShort(k)+(S.exam[ekey(c.id,k)]?"*":"")).join(", ")||"no classes yet"}`).join("\n");
+  const hist=S.chat.slice(-8,-1).map(t=>`${t.role==="user"?"Student":"Assistant"}: ${t.content.slice(0,1500)}`).join("\n\n");
+  return `You are the notes assistant inside an MBA student's class-notes website (CHRIST University, Bengaluru, MBA Marketing M5, V trimester). You help ONLY with these five courses: Strategic Brand Management (SBM), Retail Management (RTM, id retail), Entrepreneurship and Intrapreneurship (E&I, id entre), Integrated Marketing Communication (IMC), and Digital and Social Media Analytics (D&SMA, id dsma).
+Do the task the student asks immediately and completely: summaries, revision plans, quizzes, explanations, comparisons, assignment lists, flashcards, essay outlines, and so on. Do not ask clarifying questions unless the request is impossible; make a sensible assumption and say it in one line.
+Ground every answer in the student's own class material. Use the tools to read notes before answering anything about class content; for a whole-course task, read every class day of that course. Mention the class date for the points you use (for example "SBM, 8 Sep"). If the notes do not cover something, say so, then add brief textbook context marked "(textbook)".
+Never discuss gossip, personal matters or anything outside these five courses; if asked, reply that you only help with the five courses.
+Class days on record (* means exam notes exist):
+${idx}
+
+Writing style: clear, direct Indian English, active voice, varied sentence length, address the student as "you". Use Markdown headings and bullets where they help. Never use em dashes. Avoid these words: elevate, delve, leverage, harness, unleash, showcase, highlight, insights, synergies, paradigm, ecosystem, profound, groundbreaking, game changer, meanwhile, subsequently, fostering, revolutionize, reimagine, touch point, deep dive. Do not use "not only X but also Y", "From X to Y" or "That's not X. It's Y" constructions. Do not narrate your tool use.
+${hist?`\nConversation so far:\n${hist}\n`:""}
+Student's request: ${msg}`;
+}
+function saveChat(){try{localStorage.setItem("lcn.chat",JSON.stringify(S.chat.slice(-20)));}catch(e){}}
+function drawChat(){
+  const box=$("#msgs");
+  if(!S.chat.length){box.innerHTML=`<div class="hello"><h3>What should I do with your notes?</h3><p>I read your class notes from all five courses and do the task straight away. Try one of these:</p><div class="sugg">${SUGG.map(t=>`<button type="button" data-s="${esc(t)}">${esc(t)}</button>`).join("")}</div></div>`;
+    box.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>askAgent(b.dataset.s));return;}
+  box.innerHTML=S.chat.map((t,i)=>t.role==="user"?`<div class="msg u">${esc(t.content)}</div>`
+    :`<div class="msg a" data-i="${i}">${t.steps&&t.steps.length?`<div class="steps">${t.steps.map((x,j)=>`<span class="${t.pending&&j===t.steps.length-1?"run":""}">${esc(x)}</span>`).join("")}</div>`:""}
+      ${t.pending&&!t.content?'<span class="thinking"><i></i><i></i><i></i></span>':`<div class="md">${md(t.content)}${t.pending?'<span class="caret"></span>':""}</div>`}
+      ${!t.pending&&t.content?`<div class="mact"><button type="button" data-copy="${i}">Copy</button>${downloads?`<button type="button" data-dl="${i}">Download</button>`:""}</div>`:""}</div>`).join("");
+  box.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(S.chat[+b.dataset.copy].content);toast("Copied");}catch(e){toast("Copying is blocked here. Use Download.");}});
+  box.querySelectorAll("[data-dl]").forEach(b=>b.onclick=async()=>{try{await downloads.save({filename:"notes assistant answer.md",data:S.chat[+b.dataset.dl].content});}catch(e){if(e.code!=="declined")toast("The file could not be saved.");}});
+  box.scrollTop=box.scrollHeight;
+}
+function setAgentBusy(b){agentBusy=b;const btn=$("#agentSend");btn.textContent=b?"Stop":"Send";btn.type=b?"button":"submit";btn.onclick=b?()=>agentCtl&&agentCtl.abort():null;}
+async function askAgent(text){
+  text=String(text||"").trim();if(!text||agentBusy)return;
+  if(!sample){toast("The assistant needs Claude access in this view.");return;}
+  if(toolsOk===null){const lim=await sample.limits().catch(()=>null);toolsOk=!!(lim&&lim.tools);}
+  S.chat.push({role:"user",content:text});const ans={role:"assistant",content:"",steps:[],pending:true};S.chat.push(ans);drawChat();
+  $("#agentIn").value="";setAgentBusy(true);agentCtl=new AbortController();
+  const onStep=x=>{ans.steps.push(x);drawChat();};
+  let raf=0;
+  try{
+    const opts={modelTier:"default",signal:agentCtl.signal,onText:({text})=>{ans.content=text;if(!raf)raf=requestAnimationFrame(()=>{raf=0;drawChat();});}};
+    if(toolsOk)opts.tools=agentTools(onStep);else opts.cache=false;
+    const res=await sample(agentPrompt(text+(toolsOk?"":"\n(Note: tools are unavailable in this view; answer from general course knowledge and say so.)")),opts);
+    ans.content=res.text+(res.truncated?"\n\n*The answer was cut short. Ask for a smaller part at a time.*":"");
+  }catch(e){
+    const c=e&&e.code;
+    const msg=c==="cancelled"?"Stopped.":c==="not_granted"||c==="sampling_disabled"||c==="capability_disabled"?"The assistant is not allowed to use Claude in this view.":c==="rate_limited"?"You hit a usage limit. Try again in a little while.":c==="prompt_too_large"?"That needed too much material at once. Ask about one course or a few class days.":c==="session_expired"?"Sign in to claude.ai again, then retry.":c==="refused"?"I can't help with that one.":"Something went wrong. Try asking again.";
+    ans.content=(c!=="refused"&&e&&e.text?e.text+"\n\n":"")+`*${msg}*`;
+  }finally{ans.pending=false;cancelAnimationFrame(raf);setAgentBusy(false);agentCtl=null;saveChat();drawChat();}
+}
+function openAgent(){$("#agent").classList.add("on");$("#fab").style.display="none";drawChat();setTimeout(()=>$("#agentIn").focus(),60);}
+function closeAgent(){$("#agent").classList.remove("on");$("#fab").style.display="";}
+$("#fab").onclick=openAgent;$("#agentClose").onclick=closeAgent;
+$("#agentClear").onclick=()=>{if(agentBusy)return;S.chat=[];saveChat();drawChat();};
+$("#agentForm").onsubmit=e=>{e.preventDefault();askAgent($("#agentIn").value);};
+$("#agentIn").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();askAgent(e.target.value);}});
+$("#agentIn").addEventListener("input",e=>{e.target.style.height="auto";e.target.style.height=Math.min(140,e.target.scrollHeight)+"px";});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#agent").classList.contains("on")&&!$("#pal").classList.contains("on"))closeAgent();});
+
+/* sync */
+function ingest(p,announce){
+  const nb=[];for(const it of (p&&p.items)||[]){const m=it.memory||it;if(!m||!m._id||!m.started_at||m.archived)continue;if(!S.items.has(m._id))nb.push(m);S.items.set(m._id,m);}
+  if(announce&&S.first){const cls=nb.filter(m=>courseOf(m));if(cls.length){const c=BYID[courseOf(cls[0])];toast(cls.length===1?`New ${c.short} lecture from ${fmtT(cls[0].started_at)} added`:`${cls.length} new lectures added`);}}
+  return nb.length;
+}
+const stamp=t=>status("live",`Live, checked ${new Date(t||Date.now()).toLocaleTimeString("en-IN",{hour:"2-digit",minute:"2-digit",...IST})}`);
+function mcpErr(e){const c=e&&e.code;
+  if(c==="needs_reauth"){status("bad","NeoSapien needs reconnecting");banner("Your NeoSapien connection has expired. Reconnect it in claude.ai Settings, Connectors, then reload.");S.items.clear();render(false);return;}
+  if(c==="server_not_connected"||c==="selection_required"){status("bad","NeoSapien is not connected");banner("Add or choose the NeoSapien connector in claude.ai Settings, Connectors, then reload.");S.items.clear();render(false);return;}
+  if(c==="not_in_manifest"||c==="not_granted"||c==="consent_required"){status("bad","NeoSapien access not allowed");banner("This page needs permission to read NeoSapien. Reload and allow it when asked.");return;}
+  if(c==="blocked_by_policy"||c==="approval_required"){status("bad","Blocked by your organisation");banner("Your organisation's settings block this page from reading NeoSapien.");return;}
+  if(c==="capability_disabled"||c==="capability_removed"){status("bad","Live updates are off here");banner("Open this page from claude.ai to see your notes.");return;}
+  status("bad","NeoSapien is not answering, will retry");}
+const args=p=>({start_date:START_DATE,limit:100,page:p,sort_by:"created_at",sort_order:"desc",type:"all"});
+async function fullSync(){let p=1,n=1;do{const r=await mcp.callTool(SERVER,"search_memories",args(p),{cache:{staleTime:60000}});const pl=r.payload||{};ingest(pl,false);n=pl.total_pages||1;p++;}while(p<=n&&p<=20);}
+async function checkNow(){if(!mcp){toast("Still connecting to NeoSapien");return;}const b=$("#checkBtn");if(b)b.disabled=true;
+  try{const r=await mcp.callTool(SERVER,"search_memories",args(1),{cache:{refresh:true}});const n=ingest(r.payload,true);stamp();render(false);if(!n)toast("No new lectures yet");}catch(e){mcpErr(e);}finally{const b2=$("#checkBtn");if(b2)b2.disabled=false;}}
+
+async function boot(){
+  S.route=parse();render(true);
+  let user=null;[db,sample,downloads,user]=await Promise.all(["db","sample","downloads","user"].map(n=>claude.use(n).catch(()=>null)));
+  S.owner=user?await user.isOwner().catch(()=>true):true;
+  if(S.owner)mcp=await claude.use("mcp").catch(()=>null);
+  document.documentElement.classList.toggle("viewer",!S.owner);
+  if(db){
+    db.collection("announcements").onSnapshot(s=>{const o={};(s.docs||[]).forEach(d=>{const v=d.data();if(v&&v.title)o[d.id]=v;});const first=!S.annLoaded;S.annLoaded=true;S.ann=o;render(false);if(first){const h=annPending().filter(hot);if(h.length)toast(`${h.length} submission${h.length===1?"":"s"} due within 2 days`);}},()=>{});
+    db.doc("config/timetable").onSnapshot(s=>{S.tt=s.exists?s.data():null;render(false);},()=>{});
+    db.doc("config/allowlist").onSnapshot(s=>{S.allow=s.exists?s.data():null;S.allowReady=true;render(false);},()=>{S.allowReady=true;render(false);});
+    db.collection("sorting").onSnapshot(s=>{const o={};(s.docs||[]).forEach(d=>{const v=d.data();if(v&&v.source==="you"&&v.course)o[d.id]=v.course;});S.overrides=o;render(false);},()=>{});
+    db.collection("examnotes").onSnapshot(s=>{const o={};(s.docs||[]).forEach(d=>{const v=d.data();if(v&&v.markdown)o[d.id]=v;});S.exam=o;const f=!S.examLoaded;S.examLoaded=true;render(false);if(f)setTimeout(autoWrite,800);},()=>{S.examLoaded=true;});
+  }
+  if(!S.owner){S.first=true;
+    const fmt=d=>new Date(d).toLocaleString("en-IN",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",...IST});
+    const show=()=>status("live",`Live. Notes last updated ${window.__dataUpdated?fmt(window.__dataUpdated):"recently"}, checks every 2 min`);
+    window.__onCheck=show;window.__onCheckFail=()=>status("bad","Could not check for new notes, will retry");window.__onNewData=()=>toast("New notes just arrived");
+    show();render(true);return;}
+  if(!mcp){S.first=true;status("bad","NeoSapien is not available in this view");render(false);return;}
+  try{await fullSync();S.first=true;stamp();banner("");render(true);setTimeout(autoWrite,800);}catch(e){S.first=true;mcpErr(e);render(false);}
+  mcp.watchTool(SERVER,"search_memories",args(1),ev=>{if(ev.type==="data"){ingest(ev.result.payload,true);stamp(ev.result.cache&&ev.result.cache.storedAt);banner("");render(false);autoWrite();}else mcpErr(ev.error);},{refetchInterval:POLL_MS,cache:{staleTime:60000}});
+  const newest=[...S.items.values()].reduce((a,m)=>m.started_at>a?m.started_at:a,"");if(newest){try{localStorage.setItem("lcn.seenUpTo",newest);}catch(e){}}
+}
+boot();
+})();
+</script>
+</body>
+</html>

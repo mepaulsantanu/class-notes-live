@@ -1,0 +1,5 @@
+# Raw recordings and minutes stay on your Mac. Never commit these.
+data/private/
+sync/sync.log
+.DS_Store
+node_modules/

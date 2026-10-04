@@ -1,0 +1,136 @@
+{
+  "validFrom": "2026-09-07",
+  "validTo": "2026-12-31",
+  "marginBeforeMin": 10,
+  "marginAfterMin": 15,
+  "teachers": {
+    "sbm": "Prof Barkathunissa",
+    "retail": "Prof Manish Kumar Srivastava",
+    "entre": "Prof Vandita Dar",
+    "imc": "Prof Sachin Sinha",
+    "dsma": "Prof Bindhia Joji"
+  },
+  "rooms": {
+    "sbm": "C 308",
+    "retail": "C 308",
+    "entre": "C 308",
+    "imc": "C 308",
+    "dsma": "C 308"
+  },
+  "slots": [
+    {
+      "day": 1,
+      "start": "08:30",
+      "end": "10:00",
+      "course": "imc"
+    },
+    {
+      "day": 1,
+      "start": "10:30",
+      "end": "12:00",
+      "course": "imc"
+    },
+    {
+      "day": 1,
+      "start": "13:00",
+      "end": "14:30",
+      "label": "Ascend, Aptitude"
+    },
+    {
+      "day": 1,
+      "start": "14:45",
+      "end": "16:15",
+      "course": "imc"
+    },
+    {
+      "day": 2,
+      "start": "08:30",
+      "end": "10:00",
+      "course": "retail"
+    },
+    {
+      "day": 2,
+      "start": "10:30",
+      "end": "12:00",
+      "course": "sbm"
+    },
+    {
+      "day": 2,
+      "start": "13:00",
+      "end": "14:30",
+      "course": "entre"
+    },
+    {
+      "day": 3,
+      "start": "08:30",
+      "end": "10:00",
+      "course": "retail"
+    },
+    {
+      "day": 3,
+      "start": "10:30",
+      "end": "12:00",
+      "course": "sbm"
+    },
+    {
+      "day": 3,
+      "start": "14:45",
+      "end": "16:15",
+      "label": "Career Readiness / Mentoring"
+    },
+    {
+      "day": 4,
+      "start": "08:30",
+      "end": "10:00",
+      "course": "dsma"
+    },
+    {
+      "day": 4,
+      "start": "10:30",
+      "end": "12:00",
+      "course": "entre"
+    },
+    {
+      "day": 4,
+      "start": "13:00",
+      "end": "14:30",
+      "label": "Career Readiness / Mentoring"
+    },
+    {
+      "day": 4,
+      "start": "14:45",
+      "end": "16:15",
+      "label": "Ascend, Communication"
+    },
+    {
+      "day": 5,
+      "start": "10:30",
+      "end": "12:00",
+      "course": "dsma"
+    },
+    {
+      "day": 5,
+      "start": "13:00",
+      "end": "14:30",
+      "course": "entre"
+    },
+    {
+      "day": 5,
+      "start": "14:45",
+      "end": "16:15",
+      "course": "retail"
+    },
+    {
+      "day": 6,
+      "start": "08:30",
+      "end": "10:00",
+      "course": "sbm"
+    },
+    {
+      "day": 6,
+      "start": "10:30",
+      "end": "12:00",
+      "label": "Club Activities"
+    }
+  ]
+}

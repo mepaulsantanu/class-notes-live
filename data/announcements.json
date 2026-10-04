@@ -1,0 +1,81 @@
+{
+  "dsma-journey-map": {
+    "course": "dsma",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Pair exercise: buyer persona, risk level, purchase probability and at least 5 SMART recommendations per EV category. Practice submission, not graded.",
+    "due": "2026-09-24T23:59:00+05:30",
+    "kind": "Submission",
+    "source": "D&SMA class, Thu 24 Sep",
+    "title": "D&SMA practice submission: customer journey map"
+  },
+  "ei-gtm-plan": {
+    "course": "entre",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Handwritten plan of about 350 words covering go-to-market, marketing, funding and user acquisition.",
+    "due": "2026-09-11T23:59:00+05:30",
+    "kind": "Submission",
+    "source": "E&I class, Fri 11 Sep",
+    "title": "E&I: 350-word handwritten go-to-market plan"
+  },
+  "imc-cia1-usha": {
+    "course": "imc",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "In-class group assignment in the Monday IMC slot. Join the IMC Google Classroom first, because the CIA 1 submission goes through it. AI tools are allowed.",
+    "due": "2026-09-28T08:30:00+05:30",
+    "kind": "CIA",
+    "source": "IMC class, Mon 21 Sep",
+    "title": "IMC CIA 1: group assignment on the 1972 Usha ad"
+  },
+  "imc_persona": {
+    "course": "imc",
+    "createdAt": "2026-09-28T09:00:00+05:30",
+    "details": "AI or real photo plus an alliterative adjective title, describing you as a person and a consumer.",
+    "due": "2026-09-07T15:50:00+05:30",
+    "source": "notes",
+    "title": "IMC: consumer persona posted to the WhatsApp group",
+    "kind": "Assignment"
+  },
+  "rtm-cia1-part1": {
+    "course": "retail",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Pick one product and compare its price and value-added services across 5 physical stores, then write a report. Quick-commerce apps do not count. Taken up in the Friday RTM class.",
+    "due": "2026-09-18T14:45:00+05:30",
+    "kind": "CIA",
+    "source": "RTM class, Tue 15 Sep",
+    "title": "RTM CIA 1 Part 1: price and service comparison across 5 stores"
+  },
+  "rtm-cia1-part2": {
+    "course": "retail",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Visit one Exclusive Brand Outlet and write a report on 10 products in it. Due date not announced yet.",
+    "due": null,
+    "kind": "CIA",
+    "source": "RTM class, Tue 15 Sep",
+    "title": "RTM CIA 1 Part 2: EBO report on 10 products"
+  },
+  "rtm-home-visit": {
+    "course": "retail",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Visit a retail area, interview people there about the practices retailers follow, and share what you find in class. Due date not announced yet.",
+    "due": null,
+    "kind": "Assignment",
+    "source": "RTM class, Tue 15 Sep",
+    "title": "RTM home assignment: retail area visit and interviews"
+  },
+  "sbm-cia1-mindmap": {
+    "course": "sbm",
+    "createdAt": "2026-09-28T00:30:00+05:30",
+    "createdBy": "Claude",
+    "details": "Groups of up to 5, one B2C brand. Build Map A from open questions and Map B from a structured questionnaire, mark each association as strong, unique, positive or negative, then recommend what the brand should change or reinforce. Due date not announced yet.",
+    "due": null,
+    "kind": "CIA",
+    "source": "SBM class, Sat 26 Sep",
+    "title": "SBM CIA 1: aided and unaided brand mind maps"
+  }
+}
