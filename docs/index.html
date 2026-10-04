@@ -1493,7 +1493,7 @@ boot();
   var rand=Math.random;
   function vnoise(){var perm=[];for(var i=0;i<512;i++)perm[i]=Math.random();return function(x,y,z){var xi=Math.floor(x),yi=Math.floor(y),zi=Math.floor(z),xf=x-xi,yf=y-yi,zf=z-zi;function H(a,b,c){return perm[((a*73856093)^(b*19349663)^(c*83492791))&511];}function L(a,b,t){return a+(b-a)*t;}var u=xf*xf*(3-2*xf),v=yf*yf*(3-2*yf),w=zf*zf*(3-2*zf);return L(L(L(H(xi,yi,zi),H(xi+1,yi,zi),u),L(H(xi,yi+1,zi),H(xi+1,yi+1,zi),u),v),L(L(H(xi,yi,zi+1),H(xi+1,yi,zi+1),u),L(H(xi,yi+1,zi+1),H(xi+1,yi+1,zi+1),u),v),w);};}
   var noise=vnoise();
-  var ORANGE=[1,.6,.22],AMBER=[1,.78,.42],BLUE=[.28,.58,1],ICE=[.62,.8,1],WHITE=[1,.97,.92];
+  var ORANGE=[.70,.66,1],AMBER=[.84,.88,1],BLUE=[.34,.52,.98],ICE=[.64,.80,1],WHITE=[.94,.96,1];
   function mixc(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];}
   function Shape(){this.p=new Float32Array(N*3);this.c=new Float32Array(N*3);this.i=0;}
   Shape.prototype.add=function(x,y,z,col,j){if(this.i>=N)return;var k=this.i*3,jj=j||0;this.p[k]=x+(rand()-.5)*jj;this.p[k+1]=y+(rand()-.5)*jj;this.p[k+2]=z+(rand()-.5)*jj;var b=.75+rand()*.35;this.c[k]=col[0]*b;this.c[k+1]=col[1]*b;this.c[k+2]=col[2]*b;this.i++;};
@@ -1537,7 +1537,7 @@ boot();
     [.18,function(s){var t=rand()*Math.PI*2,r=.75*Math.sqrt(rand());s.add(Math.cos(t)*r,1.05+r*r*.35,Math.sin(t)*r,BLUE,.02);}]],s);});return rotP(s,-.35,.25,.35);};
 
   /* ---------- book ---------- */
-  var Wb=3,Hb=4,T=.42,dz=T/(P+1);
+  var Wb=3,Hb=4,T=.85,dz=T/(P+1);
   function inkPoints(draw,w,h){var c=document.createElement("canvas");c.width=w;c.height=h;var x=c.getContext("2d");draw(x,w,h);var d=x.getImageData(0,0,w,h).data,pts=[];for(var j=0;j<h;j+=1)for(var i=0;i<w;i+=1){var k=(j*w+i)*4;if(d[k+3]>100&&(d[k]+d[k+1]+d[k+2])<520){pts.push([i/w,1-j/h,d[k]>d[k+2]+60?1:0]);}}return pts;}
   var POOL=[["Brand Equity","Strategic Brand Management"],["Retail Formats","Retail Management"],["Opportunity","Entrepreneurship"],["Noise & Repetition","IMC"],["KPIs and Metrics","D&SMA"],["Brand Identity","Strategic Brand Management"],["Value Addition","Retail Management"],["Go-to-Market","Entrepreneurship"]];
   function pageDraw(v,mirror){return function(x,w,h){x.fillStyle="#fff";x.fillRect(0,0,w,h);x.save();if(mirror){x.translate(w,0);x.scale(-1,1);}
@@ -1563,14 +1563,15 @@ boot();
   var idx=0;
   function bookAdd(local,uv,page,side,col){if(idx>=N)return;var i=idx++;if(page>=0){aB[i*3]=uv[0];aB[i*3+1]=uv[1];aB[i*3+2]=0;}else{aB[i*3]=local[0];aB[i*3+1]=local[1];aB[i*3+2]=local[2];}
     aPF[i*4]=page;aPF[i*4+1]=page>=0?FS[page]:0;aPF[i*4+2]=page>=0?FD[page]:1;aPF[i*4+3]=side;aPN[i*2]=mid(page-1);aPN[i*2+1]=mid(page+1);var b=.8+rand()*.3;aBC[i*3]=col[0]*b;aBC[i*3+1]=col[1]*b;aBC[i*3+2]=col[2]*b;}
-  var nCover=Math.round(N*.1),nBack=Math.round(N*.035),nEdge=Math.round(N*.075),nPage=Math.floor((N-nCover-nBack-nEdge)/P);
-  for(var i=0;i<nCover;i++){if(rand()<.62){var q=coverInk[(rand()*coverInk.length)|0];bookAdd([0,0,0],[q[0],q[1]],0,3,q[2]?ORANGE:WHITE);}else{var e=rand();var u2,v2;if(e<.5){u2=rand();v2=rand()<.5?0:1;}else if(e<.8){u2=rand()<.5?0:1;v2=rand();}else{u2=rand();v2=rand();}bookAdd([0,0,0],[u2,v2],0,4,e<.8?ICE:BLUE);}}
+  var nCover=Math.round(N*.09),nBack=Math.round(N*.035),nEdge=Math.round(N*.13),nFill=Math.round(N*.04),nPage=Math.floor((N-nCover-nBack-nEdge-nFill)/P);
+  for(var i=0;i<nCover;i++){if(rand()<.62){var q=coverInk[(rand()*coverInk.length)|0];bookAdd([0,0,0],[q[0],q[1]],0,3,q[2]?[1.05,.98,1.55]:[1.5,1.52,1.65]);}else{var e=rand();var u2,v2;if(e<.5){u2=rand();v2=rand()<.5?0:1;}else if(e<.8){u2=rand()<.5?0:1;v2=rand();}else{u2=rand();v2=rand();}bookAdd([0,0,0],[u2,v2],0,4,e<.8?ICE:BLUE);}}
   for(i=0;i<nBack;i++){var e2=rand();var bu=e2<.6?(rand()<.5?0:1):rand(),bv=e2<.6?rand():(rand()<.5?0:1);if(e2>.85){bu=rand();bv=rand();}bookAdd([bu*Wb,bv*Hb,0],[0,0],-1,2,BLUE);}
-  for(i=0;i<nEdge;i++){var e3=rand(),z=rand()*T,col=rand()<.5?WHITE:ICE;if(e3<.35)bookAdd([Wb*.97,(.02+rand()*.96)*Hb,z],[0,0],-1,2,col);else if(e3<.55)bookAdd([rand()*Wb*.97,Hb*.02,z],[0,0],-1,2,col);else if(e3<.75)bookAdd([rand()*Wb*.97,Hb*.98,z],[0,0],-1,2,col);else bookAdd([0,rand()*Hb,rand()*(T+.04)],[0,0],-1,2,ORANGE);}
+  for(i=0;i<nEdge;i++){var e3=rand(),z=rand()*T,col=rand()<.5?WHITE:ICE;if(e3<.35)bookAdd([Wb*.97,(.02+rand()*.96)*Hb,Math.round(z/(T/14))*(T/14)],[0,0],-1,2,col);else if(e3<.55)bookAdd([rand()*Wb*.97,Hb*.02,z],[0,0],-1,2,col);else if(e3<.75)bookAdd([rand()*Wb*.97,Hb*.98,z],[0,0],-1,2,col);else bookAdd([0,rand()*Hb,rand()*(T+.04)],[0,0],-1,2,ORANGE);}
+  for(i=0;i<nFill;i++){bookAdd([rand()*Wb*.97,(.02+rand()*.96)*Hb,rand()*T],[0,0],-1,2,rand()<.5?ICE:BLUE);}
   for(var pg=1;pg<=P;pg++){var ink=inks[(pg-1)%VARS];
     for(i=0;i<nPage;i++){var r3=rand();
       if(r3<.18){var e4=rand(),pu,pv;if(e4<.55){pu=rand();pv=rand()<.5?0:1;}else{pu=rand()<.5?0:1;pv=rand();}if(e4>.9){pu=rand();pv=rand();}bookAdd([0,0,0],[pu*.97,.02+pv*.96],pg,2,BLUE);}
-      else{var fr=r3<.59,arr=fr?ink.f:ink.b,qq=arr[(rand()*arr.length)|0];bookAdd([0,0,0],[qq[0]*.97,.02+qq[1]*.96],pg,fr?0:1,qq[2]?ORANGE:WHITE);}}}
+      else{var fr=r3<.59,arr=fr?ink.f:ink.b,qq=arr[(rand()*arr.length)|0];bookAdd([0,0,0],[qq[0]*.97,.02+qq[1]*.96],pg,fr?0:1,qq[2]?[1.05,.98,1.55]:[1.45,1.48,1.6]);}}}
   while(idx<N){bookAdd([rand()*Wb,rand()*Hb,rand()*T],[0,0],-1,2,BLUE);}
   for(i=0;i<N;i++){var a=rand()*Math.PI*2,u3=rand()*2-1,q3=Math.sqrt(1-u3*u3);aSeed[i*4]=Math.cos(a)*q3;aSeed[i*4+1]=u3;aSeed[i*4+2]=Math.sin(a)*q3;aSeed[i*4+3]=rand();}
   function A(n,arr,sz){geo.setAttribute(n,new THREE.BufferAttribute(arr,sz));}
@@ -1610,10 +1611,37 @@ boot();
     " vec3 cFrom=uFromBook>.5?aBC:aCF;vC=mix(cFrom,aCT,f)*uBright;",
     " float bv=uFromBook>.5?vis:1.;vA=mix(bv,1.,f)*(.75+.25*sin(uT*2.+aSeed.w*60.));",
     " vec4 mv=modelViewMatrix*vec4(p,1.);",
-    " gl_PointSize=uPix*(1.7+aSeed.w*1.9)*(13./-mv.z)*(1.+burst*.5);",
+    " float dz=clamp((-mv.z-12.)/3.2,-1.,1.);vA*=.72-.32*dz;",
+    " gl_PointSize=uPix*(1.6+aSeed.w*1.8)*(13./-mv.z)*(1.+burst*.5);",
     " gl_Position=projectionMatrix*mv;}"].join("\n"),
-    fragmentShader:"varying vec3 vC;varying float vA;void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;float a=smoothstep(.25,.0,r);float core=smoothstep(.06,.0,r);gl_FragColor=vec4(vC*(a*1.25+core*.6),a*vA);}"});
+    fragmentShader:"varying vec3 vC;varying float vA;void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;float a=smoothstep(.25,.0,r);float core=smoothstep(.06,.0,r);gl_FragColor=vec4(vC*(a*.95+core*.45),a*vA*.85);}"});
   var points=new THREE.Points(geo,mat);points.frustumCulled=false;scene.add(points);
+
+  /* ambient dust and orbit rings around the scene */
+  var AN=small?2600:6500,ag=new THREE.BufferGeometry(),ap=new Float32Array(AN*3),aa=new Float32Array(AN*3);
+  for(i=0;i<AN;i++){var kind=rand();var r,th,y;
+    if(kind<.55){r=2.5+Math.pow(rand(),.7)*9;th=rand()*Math.PI*2;y=(rand()-.5)*7*(1-r/14);aa[i*3+2]=0;}
+    else if(kind<.8){r=5.2+(rand()-.5)*.35;th=rand()*Math.PI*2;y=(rand()-.5)*.12;aa[i*3+2]=1;}
+    else{r=7+(rand()-.5)*.5;th=rand()*Math.PI*2;y=(rand()-.5)*.16;aa[i*3+2]=2;}
+    ap[i*3]=r;ap[i*3+1]=y;ap[i*3+2]=th;aa[i*3]=rand();aa[i*3+1]=rand()<.5?0:1;}
+  ag.setAttribute("position",new THREE.BufferAttribute(ap,3));ag.setAttribute("aA",new THREE.BufferAttribute(aa,3));
+  var AU={uT:{value:0},uPix:{value:DPR},uOp:{value:1}};
+  var amb=new THREE.Points(ag,new THREE.ShaderMaterial({uniforms:AU,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+    vertexShader:[
+      "attribute vec3 aA;uniform float uT,uPix,uOp;varying float vA;varying vec3 vC;",
+      "mat3 rx(float a){float c=cos(a),s=sin(a);return mat3(1.,0.,0.,0.,c,s,0.,-s,c);}",
+      "mat3 rz(float a){float c=cos(a),s=sin(a);return mat3(c,s,0.,-s,c,0.,0.,0.,1.);}",
+      "void main(){float r=position.x,th=position.z+uT*(aA.z<.5?.03/(.3+r*.08):(aA.z<1.5?.06:-.04));",
+      " vec3 p=vec3(cos(th)*r,position.y+sin(uT*.3+aA.x*20.)*.15,sin(th)*r);",
+      " if(aA.z>.5&&aA.z<1.5)p=rz(.35)*rx(1.18)*p;else if(aA.z>1.5)p=rz(-.5)*rx(1.32)*p;else p=rx(.25)*p;",
+      " p.z-=3.;vec4 mv=modelViewMatrix*vec4(p,1.);",
+      " float tw=.5+.5*sin(uT*(.7+aA.x*1.8)+aA.x*50.);",
+      " vA=uOp*(aA.z<.5?.4:.8)*tw*smoothstep(26.,9.,-mv.z);",
+      " vC=aA.y<.5?vec3(.66,.80,1.):vec3(.76,.70,1.);",
+      " gl_PointSize=uPix*(aA.z<.5?1.3+aA.x*1.7:1.8+aA.x*1.4)*(14./-mv.z);",
+      " gl_Position=projectionMatrix*mv;}"].join("\n"),
+    fragmentShader:"varying float vA;varying vec3 vC;void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;gl_FragColor=vec4(vC*smoothstep(.25,0.,r),vA);}"}));
+  amb.frustumCulled=false;scene.add(amb);
 
   /* white stars: three depth layers that drift slowly toward you and twinkle; a few bright ones glint */
   var SN=small?3200:8000,sg=new THREE.BufferGeometry(),sp=new Float32Array(SN*3),ss=new Float32Array(SN*2);
@@ -1678,7 +1706,7 @@ boot();
     var light=html.dataset.theme==="light"&&!html.classList.contains("intro-on");
     canvas.style.opacity=light?"0":"1";if(light)return;
     mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
-    U.uT.value=now/1000;SU.uT.value=now/1000;SU.uPar.value.set(-mx,my);
+    U.uT.value=now/1000;SU.uT.value=now/1000;SU.uPar.value.set(-mx,my);AU.uT.value=now/1000;var ambT=html.classList.contains("intro-done")?.38:1;AU.uOp.value+=(ambT-AU.uOp.value)*.03;
     if(flipStart>=0)U.uFlip.value=now-flipStart;
     bookMatrix(now);shapeMatrix(now);
     if(morphStart>=0){var p=Math.min(1,(now-morphStart)/MORPH_MS);U.uMorph.value=p;if(p>=1){morphStart=-1;U.uFromBook.value=0;aFrom.set(aTo);aCF.set(aCT);geo.attributes.aFrom.needsUpdate=true;geo.attributes.aCF.needsUpdate=true;if(pending&&pending!==current){var n=pending;pending=null;morphTo(n);}else pending=null;}}
