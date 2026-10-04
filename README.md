@@ -54,3 +54,7 @@ Node.js (no dependencies), Claude Code in headless mode, the NeoSapien MCP conne
 ## Run it yourself
 
 See [SETUP.md](SETUP.md). For the product thinking behind it, see [CASE_STUDY.md](CASE_STUDY.md).
+
+## Credits
+
+The engraved certificate on the home page is ThreeUI Community's **Engraved Certificate** (MIT), loaded unchanged from `docs/vendor/threeui/`. See the NOTICE file there.

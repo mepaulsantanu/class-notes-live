@@ -7,7 +7,7 @@
 <meta name="description" content="Live exam notes for five MBA Marketing courses, generated automatically from classroom recordings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F6F6FA; --card:#FFFFFF; --ink:#16161F; --soft:#666A7F; --faint:#9A9DB0; --rule:#E7E7EF; --glass:rgba(255,255,255,.72);
@@ -423,6 +423,110 @@ button.ttc:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--c
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
 }
 .fab{display:none!important}
+
+/* ================= Paper & ink edition ================= */
+:root{
+  --bg:#e7e0cd; --card:#f6f1e3; --ink:#1f3a30; --soft:rgba(31,58,48,.66); --faint:rgba(31,58,48,.42); --rule:rgba(31,58,48,.18); --glass:rgba(246,241,227,.86);
+  --sbm:#8b2f3d; --retail:#3d6b4b; --entre:#a06c12; --imc:#2e4d7c; --dsma:#5e3f74; --ok:#2f6b47; --warn:#a3402a;
+  --f:"Source Serif 4",Georgia,"Times New Roman",serif; --d:"Cormorant Garamond",Didot,"Times New Roman",serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --r:4px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121a16; --card:#18221d; --ink:#e9e2cf; --soft:rgba(233,226,207,.7); --faint:rgba(233,226,207,.42); --rule:rgba(233,226,207,.14); --glass:rgba(24,34,29,.86);
+  --sbm:#d77b88; --retail:#83b593; --entre:#d6a750; --imc:#8aa7d6; --dsma:#b393cc; --ok:#7fbf95; --warn:#e08a72; }}
+:root[data-theme="dark"]{
+  --bg:#121a16; --card:#18221d; --ink:#e9e2cf; --soft:rgba(233,226,207,.7); --faint:rgba(233,226,207,.42); --rule:rgba(233,226,207,.14); --glass:rgba(24,34,29,.86);
+  --sbm:#d77b88; --retail:#83b593; --entre:#d6a750; --imc:#8aa7d6; --dsma:#b393cc; --ok:#7fbf95; --warn:#e08a72; }
+body{font-size:17px;line-height:1.62;background-image:repeating-linear-gradient(0deg,transparent 0 27px,color-mix(in srgb,var(--ink) 5%,transparent) 27px 28px);background-size:auto}
+h1,h2,h3,.dname,.dhead h1,.chead h1,.ahero h1,.b-hero h1,.stat .v,.tile .tn,.dcard .num,.cstats b,.bh h2,.fc .q,.hello h3{font-family:var(--d);font-weight:500;letter-spacing:-.01em}
+.tag,.chipdue,.kbd,kbd,.tm,.stat .k,.dsub,.dcard .mo,.dcard .foot small,.crumb,.toc a,.toc b,.segtabs button,.seg button,.tab,.bnav button,.iconbtn,.btn,.live,.mh-kicker,.mh-t,.mh-n,.rec .tm,.md .call .cl,.md .qa .qn,.fc .lab,figcaption,.foot-note,.meta,.rowlist .t small{font-family:var(--mono);letter-spacing:.02em}
+.tag,.chipdue{font-size:.7rem;font-weight:500;text-transform:uppercase;letter-spacing:.08em;border-radius:2px}
+.btn{border-radius:2px;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;padding:10px 16px}
+.btn:hover{box-shadow:none;transform:none;background:color-mix(in srgb,var(--ink) 86%,var(--card))}
+.btn.c:hover{background:color-mix(in srgb,var(--c) 84%,#000)}
+.btn.ghost{border-color:var(--ink)}
+.btn.shine::after{display:none}
+.card,.dcard,.acard,.amini,.rec,.paper,.chead,.ahero{border-radius:var(--r);box-shadow:none}
+.card,.dcard{border:1px solid var(--rule)}
+.spot::before{display:none}
+.lift:hover{transform:none;box-shadow:none;border-color:var(--ink)}
+.dcard:hover{background:color-mix(in srgb,var(--card) 70%,var(--bg))}
+.navin{border-radius:2px;box-shadow:none;border-color:var(--rule);backdrop-filter:blur(10px)}
+.mark{border-radius:50%;background:var(--ink)}.mark::after{inset:6px;border-radius:50%;background:var(--card);box-shadow:inset 0 0 0 2px var(--ink)}
+.brand span{font-family:var(--d);font-size:1.25rem;font-weight:600;letter-spacing:0}
+.pill{border-radius:2px}
+.tab{border-radius:2px;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em}
+.iconbtn{border-radius:2px}
+.bdg{border-radius:2px;font-family:var(--mono)}
+.b-hero{background:var(--card)}
+.b-hero h1,.b-hero > div > p.muted{display:none}
+.b-hero .live{margin-bottom:6px}
+.stat .v{font-size:3rem;font-weight:500}
+.gborder{background:none;animation:none;padding:0;border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:-5px}
+.gborder>div{border-radius:0}
+.b-latest h3{font-size:1.7rem}
+.ring text{font-family:var(--d)}
+.b-ann{background:var(--card)}
+.amini{border-radius:2px}
+.amini b{font-family:var(--d);font-size:1.15rem;font-weight:600}
+.acard h3{font-family:var(--d);font-size:1.5rem;font-weight:600}
+.alertbar{border-radius:2px}.alertbar .ic{border-radius:2px;animation:none}
+.chead,.ahero{background:var(--card);border-top:3px solid var(--c)}
+.chead h1,.ahero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:500}
+.dcard{border-top:3px solid var(--c)}
+.dcard .num{font-size:3rem;font-weight:500}
+.dcard h3{font-family:var(--d)}
+.dhead h1{font-size:clamp(2.2rem,4.6vw,3.2rem)}
+.segtabs{border-radius:2px}.segtabs .ind{border-radius:2px}.segtabs button{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em}
+.seg{border-radius:2px}.seg button{border-radius:2px;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em}
+.search input{border-radius:2px;font-family:var(--f)}
+.paper .md{font-size:1.06rem;line-height:1.75}
+.paper .md>p:first-child{font-family:var(--d);font-size:1.4rem;line-height:1.45;font-style:italic;background:none;border:0;border-left:3px solid var(--c);border-radius:0;padding:4px 0 4px 18px}
+.paper .md h2{font-size:1.9rem;font-weight:500}
+.paper .md h2::before{font-family:var(--mono);background:none;color:var(--c);border:1px solid var(--c);border-radius:2px}
+.paper .md h3{font-family:var(--d);font-size:1.35rem;font-weight:600;border-left:0;padding-left:0;color:var(--c)}
+.md .call{border-radius:0;border-left-width:2px;background:color-mix(in srgb,var(--cc) 6%,transparent)}
+.md .qa{font-family:var(--d);font-size:1.25rem;font-weight:600}
+.md .qa .qn{border-radius:2px}
+.md .qa-a{border-radius:2px}
+.md .tw{border-radius:2px}
+.md th{font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em}
+.md td:first-child{font-family:var(--d);font-size:1.08rem}
+.fc .face{border-radius:4px}
+.fc .front{background:var(--card);border-top:3px solid var(--c)}
+.fc .q{font-size:clamp(1.4rem,3vw,1.9rem)}
+.toast{border-radius:2px;font-family:var(--mono);font-size:.82rem}
+.fab{background:var(--ink);color:var(--card);border-radius:2px;animation:none;box-shadow:0 6px 0 -2px color-mix(in srgb,var(--ink) 30%,transparent);font-family:var(--mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+.ttc{border-radius:2px;font-family:var(--mono);font-weight:500}
+.tth.today{border-radius:2px}
+.bnav{border-radius:2px}.bnav button{border-radius:2px}
+.empty{font-family:var(--f)}
+.dot.on{animation:none}
+.foot-note{border-top:1px solid var(--rule);padding-top:14px}
+
+/* Masthead */
+.masthead{display:none}
+html[data-route="home"] .masthead{display:grid}
+.masthead{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,4vw,56px);align-items:center;margin:10px 0 26px;padding:clamp(22px,4vw,44px) 0;border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
+.mh-kicker{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 18px;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
+.mh-kicker span+span::before{content:"";display:inline-block;width:18px;height:1px;background:currentColor;vertical-align:middle;margin-right:18px}
+.mh-title{font-family:var(--d);font-weight:500;font-size:clamp(3rem,8vw,6.2rem);line-height:.92;letter-spacing:-.025em;margin:0 0 18px}
+.mh-title em{font-style:italic;font-weight:400}
+.mh-deck{font-size:1.12rem;line-height:1.6;color:var(--soft);max-width:42ch;margin:0 0 24px}
+.mh-index{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.mh-index li{border-bottom:1px solid var(--rule)}
+.mh-index button{width:100%;display:grid;grid-template-columns:42px 1fr auto;align-items:baseline;gap:12px;padding:10px 2px;border:0;background:none;cursor:pointer;text-align:left;color:var(--ink);transition:padding .25s ease,background .25s ease}
+.mh-index button:hover{padding-left:10px;background:color-mix(in srgb,var(--c) 7%,transparent)}
+.mh-n{font-size:.72rem;color:var(--c)}
+.mh-c{font-family:var(--d);font-size:1.3rem;font-weight:500;line-height:1.2}
+.mh-t{font-size:.68rem;color:var(--faint);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.mh-plate{margin:0}
+.mh-frame{aspect-ratio:1.08/1;width:100%;background:#ded6c2;border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:6px}
+.mh-frame iframe{display:block;width:100%;height:100%;border:0}
+.mh-plate figcaption{margin-top:16px;font-size:.68rem;letter-spacing:.06em;color:var(--faint);text-transform:uppercase}
+@media (max-width:860px){.masthead{grid-template-columns:1fr}.mh-t{display:none}.mh-plate{max-width:520px}.mh-kicker{gap:6px 10px}.mh-kicker span+span::before{content:"·";width:auto;height:auto;background:none;margin-right:10px}}
+.crumb .backlink{border-radius:2px;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){.mh-index button{transition:none}}
 </style>
 </head>
 <body>
@@ -441,6 +545,18 @@ button.ttc:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--c
 <main class="wrap">
   <div id="annAlert"></div>
   <div class="banner" id="banner" hidden></div>
+  <section class="masthead" id="masthead" aria-label="Class Notes Live">
+    <div class="mh-text">
+      <p class="mh-kicker"><span>Vol. I</span><span>M5 · V Trimester</span><span>Sep to Dec 2026</span></p>
+      <h1 class="mh-title">Class Notes,<br><em>kept live.</em></h1>
+      <p class="mh-deck">Five marketing courses. Every lecture recorded, sorted by the timetable, and set down as exam notes with definitions, cases and practice questions.</p>
+      <ol class="mh-index" id="mhIndex"></ol>
+    </div>
+    <figure class="mh-plate">
+      <div class="mh-frame"><iframe id="certFrame" title="Kinetic Lathe certificate" sandbox="allow-scripts" loading="eager"></iframe></div>
+      <figcaption>Fig. 1 · Engraved Certificate, rendered live on canvas. Source: ThreeUI Community, MIT licence.</figcaption>
+    </figure>
+  </section>
   <div id="app"></div>
   <p class="foot-note">Only lectures from the five M5 courses appear here; raw recordings stay private. Recordings from 7 to 26 September were checked one by one against your M5 timetable. Newer ones go live only if they were recorded in that course's timetable slot and contain no social talk. Off-topic lines inside notes are removed before display.</p>
 </main>
@@ -844,6 +960,10 @@ function navDay(g,c,k){const ks=[...g[c].keys()];const i=ks.indexOf(k);const new
 
 /* render */
 function render(anim){
+  document.documentElement.dataset.route=S.route.v;
+  const mi=document.getElementById("mhIndex");
+  if(mi&&!mi.dataset.done){mi.dataset.done="1";mi.innerHTML=COURSES.map((c,i)=>`<li style="--c:${c.color}"><button type="button" data-go="${c.id}"><span class="mh-n">${["I","II","III","IV","V"][i]}</span><span class="mh-c">${esc(c.name)}</span><span class="mh-t">${esc(TEACH[c.id])}</span></button></li>`).join("");
+    mi.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>go(`#/c/${b.dataset.go}`));}
   const g=model();renderNav(g);const bb=$("#backBtn");if(bb){bb.hidden=S.route.v==="home";bb.onclick=back;}
   renderAlert();if(S.route.v==="ann")renderAnn(anim);else if(S.route.v==="home")renderHome(g,anim);else if(S.route.v==="course")renderCourse(g,anim);else renderDay(g,anim);
   $$("[data-back]").forEach(b=>b.onclick=back);
@@ -1222,6 +1342,35 @@ async function boot(){
   const newest=[...S.items.values()].reduce((a,m)=>m.started_at>a?m.started_at:a,"");if(newest){try{localStorage.setItem("lcn.seenUpTo",newest);}catch(e){}}
 }
 boot();
+})();
+</script>
+<script>
+/* EngravedCertificate from ThreeUI Community (MIT), source SHA-256 dc48266f23df.
+   Plain-JS port of NeuformCraftEffects.tsx: the canonical HTML is loaded unchanged,
+   the same focus style and script are injected, and it renders in a sandboxed iframe. */
+(function(){
+  var definition={title:"Kinetic Lathe certificate",background:"#ded6c2",targets:[{selector:"#cert",role:"ui",width:"720px"}]};
+  function buildFocusedDocument(source,definition){
+    var targetJson=JSON.stringify(definition.targets).replace(/</g,"\\u003c");
+    var background=definition.background;
+    var focusStyle='<style data-threeui-focus>\n'+
+'html, body { width: 100% !important; height: 100% !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background: '+background+' !important; }\n'+
+'body { position: relative !important; display: flex !important; align-items: center !important; justify-content: center !important; }\n'+
+'body > * { visibility: hidden !important; }\n'+
+'body[data-threeui-ready] > [data-threeui-role] { visibility: visible !important; }\n'+
+'[data-threeui-residual] { display: none !important; }\n'+
+'[data-threeui-role="background"] { position: fixed !important; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; z-index: 0 !important; opacity: 1 !important; pointer-events: none !important; }\n'+
+'[data-threeui-role="ui"] { position: relative !important; z-index: 1 !important; width: min(calc(100% - 32px), var(--threeui-target-width, 1040px)) !important; max-width: none !important; max-height: calc(100% - 32px) !important; margin: auto !important; overflow: auto !important; opacity: 1 !important; transform: none !important; filter: none !important; flex: none !important; box-sizing: border-box !important; }\n'+
+'\n</style>';
+    var focusScript='<script data-threeui-focus>\n(function () {\n  var isolated = false;\n  function isolate() {\n    if (isolated) return;\n    var specs = '+targetJson+';\n    var roots = [];\n    specs.forEach(function (spec) {\n      var element = document.querySelector(spec.selector);\n      if (!element) return;\n      element.setAttribute(\'data-threeui-role\', spec.role);\n      if (spec.width) element.style.setProperty(\'--threeui-target-width\', spec.width);\n      if (!roots.some(function (root) { return root.contains(element); })) roots.push(element);\n    });\n    if (!roots.length) return;\n    isolated = true;\n    roots.forEach(function (root) { document.body.appendChild(root); });\n    Array.from(document.body.children).forEach(function (element) {\n      if (roots.indexOf(element) !== -1) return;\n      element.setAttribute(\'data-threeui-residual\', \'\');\n      element.setAttribute(\'aria-hidden\', \'true\');\n      if (\'inert\' in element) element.inert = true;\n    });\n    document.body.setAttribute(\'data-threeui-ready\', \'\');\n    requestAnimationFrame(function () { window.dispatchEvent(new Event(\'resize\')); });\n  }\n  function scheduleIsolation() { setTimeout(isolate, 100); }\n  if (document.readyState === \'loading\') document.addEventListener(\'DOMContentLoaded\', scheduleIsolation, { once: true });\n  else scheduleIsolation();\n  window.addEventListener(\'load\', isolate, { once: true });\n})();\n<\/script>';
+    return source.replace(/<\/head>/i,function(){return focusStyle+'</head>';}).replace(/<\/body>/i,function(){return focusScript+'</body>';});
+  }
+  var frame=document.getElementById("certFrame");
+  if(!frame)return;
+  frame.style.cssText="display:block;width:100%;height:100%;border:0;background:"+definition.background;
+  fetch("vendor/threeui/kinetic-lathe-certificate.html").then(function(r){if(!r.ok)throw 0;return r.text();})
+    .then(function(src){frame.srcdoc=buildFocusedDocument(src,definition);})
+    .catch(function(){var f=document.querySelector(".mh-plate");if(f)f.style.display="none";});
 })();
 </script>
 </body>
