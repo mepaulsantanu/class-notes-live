@@ -9,8 +9,10 @@ const writeJSON = (f, v) => { fs.mkdirSync(path.dirname(f), { recursive: true })
 
 // Domains NeoSapien tags on social or personal recordings. Never published.
 const SOFT_SKIP = ["Casual / Social","Family","Household","Health & Wellness","Travel","Personal Finance","Hobbies","Journaling","Real Estate","Parenting"];
-// Words in a title or summary that mark a recording as off-topic, even during a class slot.
-const RED_FLAG = /banter|gossip|casual|snack|food|lunch|dinner|party|birthday|family|girlfriend|boyfriend|relationship|roommate|travel|trip|dispute|charger|photo|parking|meal|drink|joke|personal|venting|placement|recruit|\bfest\b|competition|client|invoice|agency|kelora|ping me|sponsor|shopping|cricket|movie|gaming|gym|hostel|pg\b/i;
+// Words that mark a recording as social chat even inside a class slot. Kept to clearly
+// non-academic talk: marketing lectures legitimately mention movies, agencies, clients,
+// placement (product placement), personal selling, travel brands and competitions.
+const RED_FLAG = /\bgossip\b|\bbanter\b|\bsnacks?\b|\blunch\b|\bdinner\b|\bbirthday\b|\bgirlfriend\b|\bboyfriend\b|\broommate\b|\bhostel\b|\bgym\b|\bcharger\b|\bparking\b|\bventing\b|kelora|ping me|\binvoice\b/i;
 // Section headings and lines removed from minutes before Claude ever sees them.
 const OFF_HEAD = /misc|personal|casual|social|banter|gossip|food|snack|lunch|attendance|roll call|technical|logistic|pre-class|administrat|side conversation|gaming|identity inquir|campus|travel|party|photo|payment|fabricat|faculty and peer|faculty discussion|peer mention|course observation|other discussion|institutional|cultural notes|pg student|account issues|interpersonal|family/i;
 const OFF_LINE = /gossip|banter|\bjok(e|ed|es|ing)\b|teas(e|ing)|snack|\bfood\b|lunch|\btea\b|parcel|\bgym\b|party|drinks|girlfriend|boyfriend|makeup|eyebrow|hungry|wi-?fi|internet|hotspot|charger|phone number|fake attendance|attendance notes|dhoti|magazine claim|profanit|slapp|sleep|personal trainer|resale value|cricket|instagram page|marwari|stereotyp|kajal|laughter|chaotic|playful/i;
