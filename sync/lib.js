@@ -40,6 +40,21 @@ function slotAt(iso, tt) {
   return tt.slots.find(x => x.day === wd && mins >= hm(x.start) - (tt.marginBeforeMin || 10) && mins <= hm(x.end) + (tt.marginAfterMin || 15)) || null;
 }
 
+// Your own chats that happen during a slot (your business, a friend's venture, casual talk).
+const PERSONAL = /\b(his|her|their) (own )?(business|company|agency|startup|brand|venture)\b|\bpeer'?s\b|\bfriend'?s\b|\bcasual (discussion|conversation|exchange|sync|chat)\b|\bpersonal (update|story|anecdote)s?\b/i;
+// Words that identify each course's content, used when a class does not match the timetable.
+const COURSE_WORDS = {
+  sbm: ["brand equity","branding","brand identity","brand pyramid","resonance","salience","brand positioning","mascot","brand element","cbbe","brand valuation","brand strength"],
+  retail: ["retail","store format","gravity model","trade area","catchment","shopping area","kirana","hypermarket","assortment","visual merchandising","location analysis","footfall"],
+  entre: ["entrepreneur","intrapreneur","startup","founder","venture capital","go-to-market","business model canvas","gem report","bootstrapp"],
+  imc: ["advertising","advertisement","promotion mix","public relations","sales promotion","communication model","ad appeal","copywriting","media planning","integrated marketing"],
+  dsma: ["analytics","kpi","dashboard","ga4","conversion rate","power bi","metric","funnel","customer journey","predictive","prescriptive","data visualis","data visualiz"]
+};
+function courseScores(m){
+  const t=[m.title,m.summary,(m.topics||[]).join(" ")].join(" ").toLowerCase();
+  const out={};for(const c in COURSE_WORDS)out[c]=COURSE_WORDS[c].reduce((n,w)=>n+(t.includes(w)?1:0),0);return out;
+}
+
 // Decide which course a recording belongs to, or null to keep it off the site.
 function courseOf(m, tt, allow) {
   if (allow && new Date(m.started_at) < new Date(allow.cutoff)) return allow.courses[m._id] || null;
@@ -47,8 +62,12 @@ function courseOf(m, tt, allow) {
   if (!sl || !sl.course) return null;
   if ((m.domains || []).some(d => SOFT_SKIP.includes(d))) return null;
   if (RED_FLAG.test([m.title, m.summary, (m.topics || []).join(" ")].join(" "))) return null;
+  if (PERSONAL.test([m.title, m.summary].join(" "))) return null;
   const dur = (new Date(m.finished_at || m.started_at) - new Date(m.started_at)) / 1000;
   if (dur < 30) return null;
+  // A rescheduled class: content clearly belongs to another course and not to the slot's course.
+  const sc=courseScores(m);let best=sl.course;for(const c in sc)if(sc[c]>sc[best])best=c;
+  if(best!==sl.course&&sc[best]>=2&&sc[sl.course]===0)return best;
   return sl.course;
 }
 
