@@ -83,6 +83,22 @@ That's it. From now on:
 
 If a run is cut short because you closed the lid, nothing breaks. The next run picks up where it stopped.
 
+## Keep background syncs logged in (do this once a year)
+
+Your normal Claude Code login expires after a while, and background syncs cannot renew it. Create a one-year login just for the sync:
+
+```
+claude setup-token
+```
+
+Approve it in the browser, then copy the token it prints (it starts with `sk-ant-oat01-`) and save it:
+
+```
+mkdir -p ~/.config/class-notes && pbpaste > ~/.config/class-notes/claude-token && chmod 600 ~/.config/class-notes/claude-token
+```
+
+(Copy the token first with Cmd + C, because `pbpaste` saves whatever is on your clipboard.) The token never goes to GitHub. You get a Mac notification if any login expires again.
+
 ## Everyday use
 
 - **New announcement or deadline:** edit `data/announcements.json` (copy an existing entry, change the id, title, course, kind, due and details), then run `./sync/sync.sh` or just `git add`, `commit` and `push`.
